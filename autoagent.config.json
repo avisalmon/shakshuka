@@ -1,6 +1,6 @@
 {
   "maxIterations": 5,
-  "maxToolRounds": 30,
+  "maxToolRounds": 50,
   "contextWarnPct": 50,
   "contextCutPct": 75,
   "subagentMaxDepth": 0,
