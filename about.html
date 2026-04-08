@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Shakshuka שקשוקה</title>
+  <meta name="description" content="About this shakshuka recipe collection — research, sources, and credits.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span>🍳</span> Shakshuka</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#recipes" class="nav-link">Recipes</a>
+      <a href="history.html" class="nav-link">History</a>
+      <a href="techniques.html" class="nav-link">Techniques</a>
+      <a href="debates.html" class="nav-link">Debates</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-container" style="max-width:200px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+        <div class="search-results"></div>
+      </div>
+      <a href="favorites.html" class="nav-favorites" aria-label="Favorites">❤️ <span class="favorites-badge" style="display:none">0</span></a>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <a href="index.html" class="mobile-nav-link">🏠 Home</a>
+  <a href="index.html#recipes" class="mobile-nav-link">🍳 All Recipes</a>
+  <a href="history.html" class="mobile-nav-link">📜 History</a>
+  <a href="techniques.html" class="mobile-nav-link">👨‍🍳 Techniques</a>
+  <a href="debates.html" class="mobile-nav-link">⚔ Debates</a>
+  <a href="favorites.html" class="mobile-nav-link">❤️ Favorites</a>
+  <a href="about.html" class="mobile-nav-link">ℹ️ About</a>
+</div>
+
+<!-- Hero Section -->
+<section class="page-hero about-hero">
+  <div class="page-hero-content">
+    <h1>About This Project</h1>
+    <p class="hero-hebrew">אודות הפרויקט</p>
+    <p class="hero-subtitle">How this collection came together</p>
+  </div>
+</section>
+
+<!-- The Project -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2 class="section-title">The Project</h2>
+    <div class="content-block">
+      <p>This is a curated collection of 24 shakshuka recipes, extracted from comprehensive research covering Israel's top chefs, home cooks, and food writers.</p>
+      <p>Every recipe, technique, and historical insight comes from real Israeli food sources — nothing invented.</p>
+      <p>The site was built as a love letter to Israel's most beloved breakfast dish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- About Grid -->
+<section class="content-section fade-in">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-icon">📊</div>
+        <h3>The Research</h3>
+        <p>Deep analysis of 22+ Israeli recipes, cross-referencing techniques, ingredients, and expert tips across sources.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">👨‍🍳</div>
+        <h3>The Chefs</h3>
+        <p>Recipes from Eyal Shani, Rafi Cohen, Bino Gabso, Moshik Roth, Orly Peli-Bronstein, Shay-Lee Lipa, Racheli Krut, Sarit Atar, and many more.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🔬</div>
+        <h3>The Method</h3>
+        <p>Cross-recipe analysis synthesized an "optimal" recipe combining the best techniques from all 22 sources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sources -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Sources</h2>
+    <div class="source-list">
+      <span class="source-item">Orly Peli-Bronstein & Shay-Lee Lipa</span>
+      <span class="source-item">Eyal Shani</span>
+      <span class="source-item">Rafi Cohen</span>
+      <span class="source-item">Rotem Liberzon</span>
+      <span class="source-item">Bino Gabso / Dr. Shakshuka</span>
+      <span class="source-item">Shir Halpern</span>
+      <span class="source-item">HaShef HaLavan</span>
+      <span class="source-item">Racheli Krut</span>
+      <span class="source-item">Sarit Atar</span>
+      <span class="source-item">Mutti Israel</span>
+      <span class="source-item">Leiza Panels</span>
+      <span class="source-item">Ron Yochananov</span>
+      <span class="source-item">Eitan Acqua</span>
+      <span class="source-item">Moshik Roth</span>
+      <span class="source-item">Hila Alpert</span>
+      <span class="source-item">Anat Label</span>
+      <span class="source-item">Edi Mizrachi / MasterChef</span>
+      <span class="source-item">Christoph Steiner</span>
+      <span class="source-item">Simcha Yosef / ANU Museum / FOODISH</span>
+      <span class="source-item">Serious Eats</span>
+      <span class="source-item">The Kitchen Coach</span>
+    </div>
+  </div>
+</section>
+
+<!-- Credits -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Credits</h2>
+    <div class="content-block" style="text-align:center;">
+      <div class="credit-badge">Built by Avi Salmon</div>
+      <p>Powered by deep research and a love for shakshuka. Built with pure HTML, CSS, and JavaScript — no frameworks, no build tools.</p>
+      <p>Research conducted using AI-assisted deep analysis of 22+ Israeli recipe sources.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🍳 Shakshuka</h4>
+        <p>Celebrating Israel's beloved egg dish — from the classic red to bold fusions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#classic-red">Classic Red</a></li>
+          <li><a href="index.html#green">Green</a></li>
+          <li><a href="index.html#cheese">Cheese</a></li>
+          <li><a href="index.html#meat">Meat</a></li>
+          <li><a href="index.html#fusion">Fusion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="history.html">History & Origins</a></li>
+          <li><a href="techniques.html">Techniques</a></li>
+          <li><a href="debates.html">Great Debates</a></li>
+          <li><a href="favorites.html">My Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Shakshuka — Made with 🍅 and ❤️</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

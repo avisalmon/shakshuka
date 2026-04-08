@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulgarian Cheese Shakshuka | Shakshuka Recipes</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><span>🍳</span> Shakshuka</a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html#recipes" class="nav-link">Recipes</a>
+      <a href="../history.html" class="nav-link">History</a>
+      <a href="../techniques.html" class="nav-link">Techniques</a>
+      <a href="../debates.html" class="nav-link">Debates</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-container" style="max-width:200px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+        <div class="search-results"></div>
+      </div>
+      <a href="../favorites.html" class="nav-favorites" aria-label="Favorites">❤️ <span class="favorites-badge" style="display:none">0</span></a>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <a href="../index.html" class="mobile-nav-link">🏠 Home</a>
+  <a href="../index.html#recipes" class="mobile-nav-link">🍳 All Recipes</a>
+  <a href="../history.html" class="mobile-nav-link">📜 History</a>
+  <a href="../techniques.html" class="mobile-nav-link">👨‍🍳 Techniques</a>
+  <a href="../debates.html" class="mobile-nav-link">⚔ Debates</a>
+  <a href="../favorites.html" class="mobile-nav-link">❤️ Favorites</a>
+  <a href="../about.html" class="mobile-nav-link">ℹ️ About</a>
+</div>
+
+<section class="recipe-hero" style="background-image:url('../images/recipes/bulgarian-cheese-hashef-halavan.jpg');background-size:cover;background-position:center;">
+  <div class="hero-overlay" style="background:linear-gradient(135deg, #D4A017cc, #F1C40F99);">
+    <div class="hero-content">
+      <span class="recipe-tag" style="background:#F1C40F;color:#fff;font-size:0.9rem;padding:6px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;">With Cheese</span>
+      <h1>Bulgarian Cheese Shakshuka</h1>
+      <p class="hero-hebrew" dir="rtl">שקשוקה בולגרית</p>
+      <p style="opacity:0.9;margin-top:8px;">by HaShef HaLavan</p>
+    </div>
+  </div>
+</section>
+
+<main class="recipe-detail">
+  <div class="container">
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="../index.html">Home</a> &rsaquo;
+  <a href="../index.html#recipes">Recipes</a> &rsaquo;
+  <span class="breadcrumb-current">Bulgarian Cheese Shakshuka</span>
+</nav>
+
+    <div class="recipe-meta-bar">
+  <div class="meta-item"><span class="meta-icon">⏱️</span><span class="meta-label">Prep</span><span class="meta-value">10 min</span></div>
+  <div class="meta-item"><span class="meta-icon">🔥</span><span class="meta-label">Cook</span><span class="meta-value">20 min</span></div>
+  <div class="meta-item"><span class="meta-icon">⏰</span><span class="meta-label">Total</span><span class="meta-value">30 min</span></div>
+  <div class="meta-item"><span class="meta-icon">🍽️</span><span class="meta-label">Servings</span><span class="meta-value">2-3</span></div>
+  <div class="meta-item"><span class="meta-icon">🟢</span><span class="meta-label">Difficulty</span><span class="meta-value">Easy</span></div>
+  <div class="meta-item">
+    <button class="meta-fav-btn" data-recipe="bulgarian-cheese-hashef-halavan" aria-label="Add to favorites">🤍</button>
+  </div>
+</div>
+
+    
+
+    <div class="recipe-description"><p>עגבניות שרי, סוכר לאיזון וגבינה בולגרית בנדיבות.</p></div>
+
+    
+    <div class="source-attribution" style="margin:16px 0;padding:12px 20px;background:var(--bg-card, #fff);border-left:4px solid var(--accent, #C0392B);border-radius:8px;font-size:0.95rem;">
+      <span style="opacity:0.7;">📖 מקור המתכון:</span>
+      <a href="https://www.chef-lavan.co.il/" target="_blank" rel="noopener noreferrer" style="color:var(--accent, #C0392B);text-decoration:none;font-weight:600;margin-right:8px;">השף הלבן</a>
+      <span style="opacity:0.5;font-size:0.85em;">↗</span>
+    </div>
+    <div class="recipe-tags"><span class="recipe-tag">גבינה בולגרית</span><span class="recipe-tag">עגבניות שרי</span><span class="recipe-tag">סוכר</span><span class="recipe-tag">גבינות</span></div>
+
+    <div class="recipe-content-grid">
+      <div class="ingredients-section">
+  <div class="ingredients-header">
+    <h3>🧾 Ingredients</h3>
+    <button class="btn btn-sm btn-outline" id="add-shopping-list">🛒 Add to Shopping List</button>
+  </div>
+  <ul class="ingredients-list">
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="olive oil" data-amount="" data-unit=""> <span class="ingredient-text">olive oil</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">שמן זית</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="garlic cloves" data-amount="3" data-unit="שיניים"> <span class="ingredient-text">3 שיניים garlic cloves</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">שום</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="cherry / magi tomatoes" data-amount="500" data-unit="גרם"> <span class="ingredient-text">500 גרם cherry / magi tomatoes</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">עגבניות שרי / מגי</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="hot pepper" data-amount="1" data-unit=""> <span class="ingredient-text">1  hot pepper</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">פלפל חריף</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="sugar" data-amount="1/2" data-unit="כפית"> <span class="ingredient-text">1/2 כפית sugar</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">סוכר</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="Bulgarian cheese" data-amount="150" data-unit="גרם"> <span class="ingredient-text">150 גרם Bulgarian cheese</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">גבינה בולגרית</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="eggs" data-amount="4" data-unit=""> <span class="ingredient-text">4  eggs</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">ביצים</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="salt and pepper" data-amount="" data-unit=""> <span class="ingredient-text">salt and pepper</span><span class="ingredient-hebrew" dir="rtl" style="display:block;font-size:0.85em;opacity:0.7;">מלח ופלפל</span></label></li>
+  </ul>
+</div>
+      <div class="steps-section">
+  <h3>👨‍🍳 Steps</h3>
+  <ol class="steps-list">
+<li class="step-item"><span class="step-number">1</span><div class="step-content"><p>Fry garlic in olive oil.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">מטגנים שום בשמן זית.</p></div></li>
+<li class="step-item"><span class="step-number">2</span><div class="step-content"><p>Add halved cherry tomatoes and hot pepper, cook until they break down.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">מוסיפים עגבניות שרי חצויות ופלפל חריף, מבשלים עד שמתפרקות.</p></div></li>
+<li class="step-item"><span class="step-number">3</span><div class="step-content"><p>Add sugar.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">מוסיפים סוכר.</p></div></li>
+<li class="step-item"><span class="step-number">4</span><div class="step-content"><p>Generously crumble Bulgarian cheese.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">מפוררים גבינה בולגרית בנדיבות.</p></div></li>
+<li class="step-item"><span class="step-number">5</span><div class="step-content"><p>Make wells, add eggs and cover.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">יוצרים גומות, מוסיפים ביצים ומכסים.</p></div></li>
+<li class="step-item"><span class="step-number">6</span><div class="step-content"><p>Cook until eggs are done and cheese melts.</p><p class="step-hebrew" dir="rtl" style="font-size:0.9em;opacity:0.75;margin-top:4px;">מבשלים עד שהביצים מוכנות והגבינה נמסה.</p></div></li>
+  </ol>
+</div>
+    </div>
+
+    <div class="pro-tips">
+  <h3>💡 Pro Tips</h3>
+  <ul><li>Sugar balances tomato acidity</li><li>Generous cheese — it&#x27;s the star of the dish</li><li>Cherry/magi tomatoes are sweeter than regular</li></ul>
+</div>
+
+    <div class="star-rating" data-recipe="bulgarian-cheese-hashef-halavan">
+  <h3>⭐ Rate This Recipe</h3>
+  <div class="stars">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+</div>
+
+    <div class="user-notes" data-recipe="bulgarian-cheese-hashef-halavan">
+  <h3>📝 My Notes</h3>
+  <textarea class="user-notes-input" placeholder="Write your notes about this recipe..." rows="4"></textarea>
+  <button class="btn btn-sm" id="save-notes">Save Notes</button>
+  <span class="saved-message" style="display:none;color:#27ae60;margin-left:8px;">✓ Saved!</span>
+</div>
+
+  </div>
+</main>
+
+<section class="related-section">
+  <div class="container">
+    <h3>🍳 You Might Also Like</h3>
+    <div class="related-grid"><a href="cheese-shakshuka-mutti.html" class="recipe-card related-card" data-recipe="cheese-shakshuka-mutti" style="text-decoration:none;color:inherit;">
+  <div class="card-image"><img src="../images/recipes/cheese-shakshuka-mutti.jpg" alt="Cheese Shakshuka — Mutti" loading="lazy"></div>
+  <div class="card-body">
+    <h4 class="card-title">Cheese Shakshuka — Mutti</h4>
+    <p class="card-title-he" dir="rtl">שקשוקת גבינות — Mutti</p>
+    <div class="card-meta">
+      <span>🟡 With Cheese</span>
+      <span>⏱️ 40 min</span>
+    </div>
+  </div>
+  <button class="card-favorite-btn" data-recipe="cheese-shakshuka-mutti" aria-label="Favorite">🤍</button>
+</a>
+<a href="community-museum-simcha-yosef.html" class="recipe-card related-card" data-recipe="community-museum-simcha-yosef" style="text-decoration:none;color:inherit;">
+  <div class="card-image"><img src="../images/recipes/community-museum-simcha-yosef.jpg" alt="Community/Museum Recipe — Simcha Yosef" loading="lazy"></div>
+  <div class="card-body">
+    <h4 class="card-title">Community/Museum Recipe — Simcha Yosef</h4>
+    <p class="card-title-he" dir="rtl">שקשוקה קהילתית — שמחה יוסף</p>
+    <div class="card-meta">
+      <span>🟢 With Cheese</span>
+      <span>⏱️ 30 min</span>
+    </div>
+  </div>
+  <button class="card-favorite-btn" data-recipe="community-museum-simcha-yosef" aria-label="Favorite">🤍</button>
+</a>
+<a href="classic-shakshuka-orly-shaylee.html" class="recipe-card related-card" data-recipe="classic-shakshuka-orly-shaylee" style="text-decoration:none;color:inherit;">
+  <div class="card-image"><img src="../images/recipes/classic-shakshuka-orly-shaylee.jpg" alt="Classic Shakshuka" loading="lazy"></div>
+  <div class="card-body">
+    <h4 class="card-title">Classic Shakshuka</h4>
+    <p class="card-title-he" dir="rtl">שקשוקה קלאסית</p>
+    <div class="card-meta">
+      <span>🟢 Classic Red</span>
+      <span>⏱️ 30 min</span>
+    </div>
+  </div>
+  <button class="card-favorite-btn" data-recipe="classic-shakshuka-orly-shaylee" aria-label="Favorite">🤍</button>
+</a>
+<a href="eyal-shani-minimalist.html" class="recipe-card related-card" data-recipe="eyal-shani-minimalist" style="text-decoration:none;color:inherit;">
+  <div class="card-image"><img src="../images/recipes/eyal-shani-minimalist.jpg" alt="Eyal Shani&#x27;s Minimalist Shakshuka" loading="lazy"></div>
+  <div class="card-body">
+    <h4 class="card-title">Eyal Shani&#x27;s Minimalist Shakshuka</h4>
+    <p class="card-title-he" dir="rtl">השקשוקה של אייל שני</p>
+    <div class="card-meta">
+      <span>🟡 Classic Red</span>
+      <span>⏱️ 40 min</span>
+    </div>
+  </div>
+  <button class="card-favorite-btn" data-recipe="eyal-shani-minimalist" aria-label="Favorite">🤍</button>
+</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>🍳 Shakshuka</h4>
+        <p>Celebrating Israel's beloved egg dish.</p>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="../index.html#classic-red">Classic Red</a></li>
+          <li><a href="../index.html#green">Green</a></li>
+          <li><a href="../index.html#cheese">With Cheese</a></li>
+          <li><a href="../index.html#meat">With Meat</a></li>
+          <li><a href="../index.html#fusion">Fusion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../history.html">History</a></li>
+          <li><a href="../techniques.html">Techniques</a></li>
+          <li><a href="../debates.html">Debates</a></li>
+          <li><a href="../favorites.html">Favorites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <p>24 shakshuka recipes from Israel's finest.</p>
+        <a href="../about.html">Learn more</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Shakshuka &mdash; Made with ❤️ and 🍳</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Recently viewed
+  if (typeof RecentlyViewed !== 'undefined' && RecentlyViewed.add) {
+    RecentlyViewed.add({ slug: 'bulgarian-cheese-hashef-halavan', title: 'Bulgarian Cheese Shakshuka', id: 13 });
+  }
+
+  // Star rating
+  if (typeof initStarRating === 'function') {
+    initStarRating();
+  } else {
+    var ratingDiv = document.querySelector('.star-rating');
+    if (ratingDiv) {
+      var stars = ratingDiv.querySelectorAll('.star');
+      var key = 'rating_' + ratingDiv.dataset.recipe;
+      var saved = localStorage.getItem(key);
+      if (saved) {
+        stars.forEach(function(s) {
+          s.textContent = parseInt(s.dataset.value) <= parseInt(saved) ? '★' : '☆';
+        });
+      }
+      stars.forEach(function(star) {
+        star.style.cursor = 'pointer';
+        star.style.fontSize = '1.8rem';
+        star.addEventListener('click', function() {
+          var val = this.dataset.value;
+          localStorage.setItem(key, val);
+          stars.forEach(function(s) {
+            s.textContent = parseInt(s.dataset.value) <= parseInt(val) ? '★' : '☆';
+          });
+        });
+      });
+    }
+  }
+
+  // Favorite buttons
+  if (typeof initFavoriteButtons === 'function') {
+    initFavoriteButtons();
+  }
+  if (typeof Favorites !== 'undefined' && Favorites.updateBadge) {
+    Favorites.updateBadge();
+  }
+
+  // Notes
+  var notesArea = document.querySelector('.user-notes-input');
+  var saveBtn = document.getElementById('save-notes');
+  var savedMsg = document.querySelector('.saved-message');
+  if (notesArea && saveBtn) {
+    var noteKey = 'notes_bulgarian-cheese-hashef-halavan';
+    var existingNote = localStorage.getItem(noteKey);
+    if (existingNote) notesArea.value = existingNote;
+    saveBtn.addEventListener('click', function() {
+      localStorage.setItem(noteKey, notesArea.value);
+      if (savedMsg) {
+        savedMsg.style.display = 'inline';
+        setTimeout(function() { savedMsg.style.display = 'none'; }, 2000);
+      }
+    });
+  }
+
+  // Shopping list
+  var addAllBtn = document.getElementById('add-shopping-list');
+  if (addAllBtn) {
+    addAllBtn.addEventListener('click', function() {
+      var items = [];
+      document.querySelectorAll('.ingredient-checkbox').forEach(function(cb) {
+        items.push({
+          ingredient: cb.dataset.ingredient,
+          amount: cb.dataset.amount,
+          unit: cb.dataset.unit,
+          recipe: 'bulgarian-cheese-hashef-halavan'
+        });
+      });
+      if (typeof ShoppingList !== 'undefined' && ShoppingList.addAll) {
+        ShoppingList.addAll(items);
+      } else {
+        var existing = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+        items.forEach(function(item) { existing.push(item); });
+        localStorage.setItem('shoppingList', JSON.stringify(existing));
+      }
+      addAllBtn.textContent = '✓ Added!';
+      setTimeout(function() { addAllBtn.textContent = '🛒 Add to Shopping List'; }, 2000);
+    });
+  }
+
+  // Individual checkbox -> shopping list
+  document.querySelectorAll('.ingredient-checkbox').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      if (this.checked) {
+        var item = {
+          ingredient: this.dataset.ingredient,
+          amount: this.dataset.amount,
+          unit: this.dataset.unit,
+          recipe: 'bulgarian-cheese-hashef-halavan'
+        };
+        if (typeof ShoppingList !== 'undefined' && ShoppingList.add) {
+          ShoppingList.add(item);
+        } else {
+          var existing = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+          existing.push(item);
+          localStorage.setItem('shoppingList', JSON.stringify(existing));
+        }
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The definitive collection of 24 shakshuka recipes — from classic Israeli red to bold fusions, curated from top chefs and home cooks.">
+  <meta property="og:title" content="Shakshuka שקשוקה — The Definitive Recipe Collection">
+  <meta property="og:description" content="24 shakshuka recipes from Israel's top chefs and home cooks. Classic red, green, cheese, meat, and fusion styles.">
+  <meta property="og:type" content="website">
+  <title>Shakshuka שקשוקה — The Definitive Recipe Collection</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ======== 1. NAVIGATION ======== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span>🍳</span> Shakshuka</a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#recipes" class="nav-link">Recipes</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="techniques.html" class="nav-link">Techniques</a>
+        <a href="debates.html" class="nav-link">Debates</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="search-container" style="max-width: 200px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+          <div class="search-results"></div>
+        </div>
+        <a href="favorites.html" class="nav-favorites" aria-label="Favorites">❤️ <span class="favorites-badge" style="display:none">0</span></a>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay"></div>
+
+  <div class="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">🏠 Home</a>
+    <a href="#recipes" class="mobile-nav-link">📖 All Recipes</a>
+    <a href="history.html" class="mobile-nav-link">📜 History</a>
+    <a href="techniques.html" class="mobile-nav-link">👨‍🍳 Techniques</a>
+    <a href="debates.html" class="mobile-nav-link">⚡ Debates</a>
+    <a href="favorites.html" class="mobile-nav-link">❤️ Favorites</a>
+    <a href="about.html" class="mobile-nav-link">ℹ️ About</a>
+  </div>
+
+  <!-- ======== 2. HERO SECTION ======== -->
+  <section class="hero">
+    <img src="images/hero/hero-1.jpg" alt="Shakshuka" class="hero-bg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-hebrew">שקשוקה</div>
+      <h1>Shakshuka</h1>
+      <p class="hero-subtitle">The Definitive Guide to Israel's Beloved Egg Dish — 24 Recipes from Top Chefs &amp; Home Cooks</p>
+      <div class="search-container" style="max-width: 500px; margin: 0 auto;">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search 24 recipes by name, ingredient, or style..." aria-label="Search recipes">
+        <div class="search-results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 3. CATEGORIES SECTION ======== -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="text-center">Explore by Category</h2>
+      <div class="categories-grid">
+
+        <a href="#classic-red" class="category-card" data-category="classic-red">
+          <div class="category-card-bg" style="background:url('images/recipes/classic-shakshuka-orly-shaylee.jpg') center/cover;"></div>
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Classic Red</h3>
+            <span class="category-hebrew">קלאסית אדומה</span>
+            <span class="category-card-count">11 recipes</span>
+          </div>
+        </a>
+
+        <a href="#green" class="category-card" data-category="green">
+          <div class="category-card-bg" style="background:url('images/recipes/spinach-feta-shir-halpern.jpg') center/cover;"></div>
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Green</h3>
+            <span class="category-hebrew">ירוקה</span>
+            <span class="category-card-count">2 recipes</span>
+          </div>
+        </a>
+
+        <a href="#cheese" class="category-card" data-category="cheese">
+          <div class="category-card-bg" style="background:url('images/recipes/bulgarian-cheese-hashef-halavan.jpg') center/cover;"></div>
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>With Cheese</h3>
+            <span class="category-hebrew">עם גבינות</span>
+            <span class="category-card-count">3 recipes</span>
+          </div>
+        </a>
+
+        <a href="#meat" class="category-card" data-category="meat">
+          <div class="category-card-bg" style="background:url('images/recipes/merguez-shakshuka-rafi-cohen.jpg') center/cover;"></div>
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>With Meat</h3>
+            <span class="category-hebrew">עם בשר</span>
+            <span class="category-card-count">1 recipe</span>
+          </div>
+        </a>
+
+        <a href="#fusion" class="category-card" data-category="fusion">
+          <div class="category-card-bg" style="background:url('images/recipes/thai-green-shakshuka-curry.jpg') center/cover;"></div>
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Fusion &amp; Modern</h3>
+            <span class="category-hebrew">פיוז'ן</span>
+            <span class="category-card-count">7 recipes</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 4. FEATURED RECIPE ======== -->
+  <section class="section" id="featured">
+    <div class="container">
+      <h2 class="text-center">⭐ Featured: The Synthesized Ultimate Shakshuka</h2>
+      <div style="background: var(--card-bg, #fff); border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2.5rem; max-width: 900px; margin: 2rem auto;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+          <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">The Optimal Red Shakshuka</h3>
+            <p style="color: var(--text-secondary, #666); margin-bottom: 1rem;">A data-driven synthesis of 22 top recipes — every ingredient ratio, technique, and timing optimized for the ultimate shakshuka. This isn't one chef's opinion; it's the consensus of Israel's best.</p>
+            <a href="recipes/optimal-red-synthesis.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent, #e63946); color: #fff; border-radius: 0.5rem; text-decoration: none; font-weight: 600;">View Recipe →</a>
+          </div>
+          <div style="background: linear-gradient(135deg, #e63946, #d62828, #f77f00); border-radius: 0.75rem; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 4rem;">🍳</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== 5. ALL RECIPES ======== -->
+  <section class="section" id="recipes">
+    <div class="container">
+      <h2 class="text-center">All 24 Recipes</h2>
+
+      <div class="category-filters" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="classic-red">Classic Red</button>
+        <button class="filter-btn" data-filter="green">Green</button>
+        <button class="filter-btn" data-filter="cheese">Cheese</button>
+        <button class="filter-btn" data-filter="meat">Meat</button>
+        <button class="filter-btn" data-filter="fusion">Fusion</button>
+      </div>
+
+      <div id="recipes-grid" class="recipes-grid grid"></div>
+    </div>
+  </section>
+
+  <!-- ======== 6. FOOTER ======== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🍳 Shakshuka</h4>
+          <p>Celebrating Israel's beloved egg dish — from the classic red to bold fusions. Recipes, history, techniques, and spirited debates.</p>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#classic-red">Classic Red</a></li>
+            <li><a href="#green">Green</a></li>
+            <li><a href="#cheese">With Cheese</a></li>
+            <li><a href="#meat">With Meat</a></li>
+            <li><a href="#fusion">Fusion &amp; Modern</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="history.html">History &amp; Origins</a></li>
+            <li><a href="techniques.html">Techniques</a></li>
+            <li><a href="debates.html">Great Debates</a></li>
+            <li><a href="favorites.html">My Favorites</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>About This Project</h4>
+          <p>A passion project documenting 24 shakshuka recipes from Israel's finest chefs and home cooks, built with research and love.</p>
+          <a href="about.html" style="color:var(--accent,#e63946);text-decoration:none;font-weight:600;">Learn More →</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Shakshuka שקשוקה — Made with 🍅 and ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== RECIPE LOADER SCRIPT ======== -->
+  <script>
+    (async function () {
+      const grid = document.getElementById('recipes-grid');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      let allRecipes = [];
+
+      try {
+        const res = await fetch('data/recipes.json');
+        allRecipes = await res.json();
+      } catch (e) {
+        grid.innerHTML = '<p style="text-align:center;color:#999;">Could not load recipes.</p>';
+        return;
+      }
+
+      function renderRecipes(filter) {
+        const filtered = filter === 'all'
+          ? allRecipes
+          : allRecipes.filter(r => r.category === filter);
+
+        grid.innerHTML = filtered.map(r => createRecipeCard(r)).join('');
+        initFavoriteButtons();
+        initScrollAnimations();
+      }
+
+      renderRecipes('all');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderRecipes(btn.dataset.filter);
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

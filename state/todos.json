@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "status": "completed",
+    "title": "Read state files & assess status"
+  },
+  {
+    "id": 2,
+    "status": "completed",
+    "title": "Fix any broken recipe pages"
+  },
+  {
+    "id": 3,
+    "status": "completed",
+    "title": "Add source URLs to recipes.json"
+  },
+  {
+    "id": 4,
+    "status": "completed",
+    "title": "Fix index.html footer & misc issues"
+  },
+  {
+    "id": 5,
+    "status": "in-progress",
+    "title": "Add source links to recipe pages"
+  },
+  {
+    "id": 6,
+    "status": "not-started",
+    "title": "Accessibility & final content review"
+  },
+  {
+    "id": 7,
+    "status": "not-started",
+    "title": "Update knowledge.md & self-observe"
+  },
+  {
+    "id": 8,
+    "status": "not-started",
+    "title": "Create/update dashboard.html"
+  },
+  {
+    "id": 9,
+    "status": "not-started",
+    "title": "Compose summary email via Outlook"
+  }
+]

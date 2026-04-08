@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites | Shakshuka שקשוקה</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><span>🍳</span> Shakshuka</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#recipes" class="nav-link">Recipes</a>
+      <a href="history.html" class="nav-link">History</a>
+      <a href="techniques.html" class="nav-link">Techniques</a>
+      <a href="debates.html" class="nav-link">Debates</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-container" style="max-width:200px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+        <div class="search-results"></div>
+      </div>
+      <a href="favorites.html" class="nav-favorites active" aria-label="Favorites">❤️ <span class="favorites-badge" style="display:none">0</span></a>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <a href="index.html" class="mobile-nav-link">🏠 Home</a>
+  <a href="index.html#recipes" class="mobile-nav-link">🍳 All Recipes</a>
+  <a href="history.html" class="mobile-nav-link">📜 History</a>
+  <a href="techniques.html" class="mobile-nav-link">👨‍🍳 Techniques</a>
+  <a href="debates.html" class="mobile-nav-link">⚔ Debates</a>
+  <a href="favorites.html" class="mobile-nav-link">❤️ Favorites</a>
+  <a href="about.html" class="mobile-nav-link">ℹ️ About</a>
+</div>
+
+<!-- Hero Section -->
+<section class="page-hero favorites-hero">
+  <div class="page-hero-content">
+    <h1>My Favorites</h1>
+    <p class="hero-hebrew">המתכונים האהובים שלי</p>
+    <p class="hero-subtitle">Your personal collection of beloved shakshuka recipes</p>
+  </div>
+</section>
+
+<!-- Favorites Content -->
+<section class="content-section">
+  <div class="container">
+
+    <div class="favorites-actions" id="favoritesActions" style="display:none">
+      <span class="favorites-count" id="favoritesCount"></span>
+      <button class="btn-clear-favorites" id="clearFavorites">Clear All Favorites</button>
+    </div>
+
+    <div class="favorites-grid" id="favoritesGrid"></div>
+
+    <div class="favorites-empty" id="favoritesEmpty" style="display:none">
+      <div class="favorites-empty-icon">💔</div>
+      <h2>No favorites yet</h2>
+      <p>Tap the heart on any recipe to save it here</p>
+      <a href="index.html#recipes" class="btn btn-primary">Browse All Recipes</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🍳 Shakshuka</h4>
+        <p>Celebrating Israel's beloved egg dish — from the classic red to bold fusions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#classic-red">Classic Red</a></li>
+          <li><a href="index.html#green">Green</a></li>
+          <li><a href="index.html#cheese">Cheese</a></li>
+          <li><a href="index.html#meat">Meat</a></li>
+          <li><a href="index.html#fusion">Fusion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="history.html">History & Origins</a></li>
+          <li><a href="techniques.html">Techniques</a></li>
+          <li><a href="debates.html">Great Debates</a></li>
+          <li><a href="favorites.html">My Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Shakshuka — Made with 🍅 and ❤️</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  var grid = document.getElementById('favoritesGrid');
+  var empty = document.getElementById('favoritesEmpty');
+  var actions = document.getElementById('favoritesActions');
+  var countEl = document.getElementById('favoritesCount');
+  var clearBtn = document.getElementById('clearFavorites');
+  var favSlugs = Favorites.getAll();
+
+  if (favSlugs.length === 0) {
+    empty.style.display = '';
+    grid.style.display = 'none';
+    actions.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  actions.style.display = '';
+  countEl.textContent = favSlugs.length + ' favorite' + (favSlugs.length !== 1 ? 's' : '');
+
+  var recipes = await loadRecipes();
+  var favRecipes = favSlugs.map(function(slug) { return recipes.find(function(r) { return r.slug === slug; }); }).filter(Boolean);
+
+  grid.innerHTML = favRecipes.map(function(recipe) {
+    var totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
+    var img = recipe.image
+      ? '<img src="' + recipe.image + '" alt="' + recipe.titleEn + '" loading="lazy">'
+      : '<div class="card-image-placeholder"><span class="placeholder-text">' + recipe.titleHe + '</span></div>';
+    return '<a href="recipes/' + recipe.slug + '.html" class="recipe-card fade-in">' +
+      '<div class="card-image">' + img +
+      '<button class="card-favorite-btn" data-favorite="' + recipe.slug + '">❤️</button>' +
+      '<span class="card-category-badge">' + recipe.categoryEn + '</span></div>' +
+      '<div class="card-body"><h3 class="card-title">' + recipe.titleEn + '</h3>' +
+      '<p class="card-title-he">' + recipe.titleHe + '</p>' +
+      '<p class="card-author">' + (recipe.authorEn || recipe.author) + '</p>' +
+      '<div class="card-meta"><span class="card-meta-item">🕐 ' + totalTime + ' min</span>' +
+      '<span class="card-meta-item">🍽️ ' + recipe.servings + '</span>' +
+      '<span class="card-meta-item">' + recipe.difficulty + '</span></div></div></a>';
+  }).join('');
+
+  initFavoriteButtons();
+  initScrollAnimations();
+
+  clearBtn.addEventListener('click', function() {
+    if (confirm('Remove all favorites?')) {
+      Storage.set('favorites', []);
+      Favorites.updateBadge();
+      location.reload();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
