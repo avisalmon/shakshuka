@@ -1,0 +1,359 @@
+{
+  "classic-shakshuka-orly-shaylee": {
+    "titleHe": "שקשוקה קלאסית",
+    "stages": [
+      {"name": "חימום שמן", "time_min": 2, "time_x2": 2},
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "בישול רוטב עגבניות", "time_min": 15, "time_x2": 20},
+      {"name": "תיקון תיבול", "time_min": 1, "time_x2": 1},
+      {"name": "הכנת גומות", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ביצים (מכוסה)", "time_min": 3, "time_x2": 5},
+      {"name": "הגשה", "time_min": 0, "time_x2": 0}
+    ],
+    "total_cook": 23,
+    "total_cook_x2": 30,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "eyal-shani-minimalist": {
+    "titleHe": "שקשוקה מינימליסטית — אייל שני",
+    "stages": [
+      {"name": "קילוף עגבניות (רתיחה + מי קרח)", "time_min": 5, "time_x2": 7},
+      {"name": "חיתוך עגבניות", "time_min": 5, "time_x2": 8},
+      {"name": "טיגון שום ופלפל חריף", "time_min": 2, "time_x2": 2},
+      {"name": "בישול עגבניות עד סמיכות", "time_min": 15, "time_x2": 20},
+      {"name": "תיבול", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים ללא מכסה", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 32,
+    "total_cook_x2": 43,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "rafi-cohen-chef": {
+    "titleHe": "שקשוקה — רפי כהן",
+    "stages": [
+      {"name": "חימום שמן", "time_min": 2, "time_x2": 2},
+      {"name": "טיגון שום עדין", "time_min": 2, "time_x2": 2},
+      {"name": "פתיחת פפריקה בשמן", "time_min": 1, "time_x2": 1},
+      {"name": "טיגון פלפלים חריפים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול רוטב עגבניות", "time_min": 22, "time_x2": 28},
+      {"name": "תיבול מלח", "time_min": 1, "time_x2": 1},
+      {"name": "הכנת ביצים (אופציונלי: הפרדה)", "time_min": 2, "time_x2": 3},
+      {"name": "בישול ביצים (מכוסה)", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 35,
+    "total_cook_x2": 43,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "best-recipe-no-onion": {
+    "titleHe": "השקשוקה הטובה ביותר — ללא בצל",
+    "stages": [
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "פתיחת פפריקה וקימל", "time_min": 1, "time_x2": 1},
+      {"name": "טיגון פלפלים קלויים", "time_min": 2, "time_x2": 2},
+      {"name": "בישול רוטב (ללא כיסוי)", "time_min": 22, "time_x2": 28},
+      {"name": "סודה + תיבול", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 31,
+    "total_cook_x2": 38,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "quick-canned-rotem-liberzon": {
+    "titleHe": "שקשוקה מהירה משימורים — רותם ליברזון",
+    "stages": [
+      {"name": "טיגון בצל", "time_min": 3, "time_x2": 4},
+      {"name": "שום וצ׳ילי", "time_min": 1, "time_x2": 1},
+      {"name": "עגבניות מרוסקות + רסק + מים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ללא כיסוי", "time_min": 8, "time_x2": 10},
+      {"name": "תיבול + גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ביצים (מכוסה)", "time_min": 3, "time_x2": 4}
+    ],
+    "total_cook": 17,
+    "total_cook_x2": 21,
+    "prep": 5,
+    "prep_x2": 8
+  },
+  "bino-gabso-dr-shakshuka": {
+    "titleHe": "שקשוקה ד\"ר — בינו גבסו",
+    "stages": [
+      {"name": "טיגון 10 שיני שום", "time_min": 3, "time_x2": 4},
+      {"name": "פלפלים חריפים + פפריקה", "time_min": 1, "time_x2": 1},
+      {"name": "בישול רוטב עגבניות", "time_min": 20, "time_x2": 25},
+      {"name": "ביצים — ערבוב חלבון, שמירה על חלמון", "time_min": 3, "time_x2": 4},
+      {"name": "המשך על אש נמוכה", "time_min": 2, "time_x2": 3}
+    ],
+    "total_cook": 29,
+    "total_cook_x2": 37,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "racheli-krut-most-delicious": {
+    "titleHe": "השקשוקה הכי טעימה — רחלי קרוט",
+    "stages": [
+      {"name": "טיגון שום וצ׳ילי", "time_min": 2, "time_x2": 2},
+      {"name": "פתיחת פפריקה וכמון", "time_min": 1, "time_x2": 1},
+      {"name": "קרמול רסק עגבניות", "time_min": 1, "time_x2": 2},
+      {"name": "בישול עגבניות (מכוסה קצר)", "time_min": 5, "time_x2": 7},
+      {"name": "צמצום רוטב (ללא כיסוי)", "time_min": 12, "time_x2": 16},
+      {"name": "ביצים — ללא מכסה", "time_min": 4, "time_x2": 5},
+      {"name": "פטרוזיליה", "time_min": 0, "time_x2": 0}
+    ],
+    "total_cook": 25,
+    "total_cook_x2": 33,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "sarit-atar-homestyle": {
+    "titleHe": "שקשוקה ביתית — שרית עטר",
+    "stages": [
+      {"name": "טיגון בצל ופלפל מתוק", "time_min": 5, "time_x2": 7},
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עגבניות ורסק", "time_min": 15, "time_x2": 20},
+      {"name": "ביצים (מכוסה)", "time_min": 3, "time_x2": 5}
+    ],
+    "total_cook": 24,
+    "total_cook_x2": 33,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "kids-friendly-anat-label": {
+    "titleHe": "שקשוקה לילדים — ענת לייבל",
+    "stages": [
+      {"name": "טיגון בצל ופלפל מתוק", "time_min": 5, "time_x2": 7},
+      {"name": "עגבניות טריות + משומרות + רסק", "time_min": 1, "time_x2": 1},
+      {"name": "בישול מכוסה לעיבוי", "time_min": 10, "time_x2": 13},
+      {"name": "הסרת מכסה + תיבול", "time_min": 3, "time_x2": 4},
+      {"name": "גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ביצים (מכוסה, עשויות לגמרי)", "time_min": 5, "time_x2": 7}
+    ],
+    "total_cook": 25,
+    "total_cook_x2": 33,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "shakshuka-potatoes-ron": {
+    "titleHe": "שקשוקה עם תפוחי אדמה — רון",
+    "stages": [
+      {"name": "טיגון תפוחי אדמה עד הזהבה", "time_min": 10, "time_x2": 12},
+      {"name": "טיגון בצל ושום", "time_min": 3, "time_x2": 4},
+      {"name": "פתיחת פפריקה", "time_min": 1, "time_x2": 1},
+      {"name": "בישול רוטב עגבניות", "time_min": 15, "time_x2": 20},
+      {"name": "החזרת תפוחי אדמה לרוטב", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים (מכוסה)", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 34,
+    "total_cook_x2": 43,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "spinach-feta-shir-halpern": {
+    "titleHe": "שקשוקה ירוקה עם תרד ופטה — שיר הלפרן",
+    "stages": [
+      {"name": "המסת חמאה + טיגון כרישה", "time_min": 3, "time_x2": 4},
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "כמישת תרד", "time_min": 3, "time_x2": 5},
+      {"name": "פיזור פטה", "time_min": 1, "time_x2": 1},
+      {"name": "גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ביצים (מכוסה, אש נמוכה)", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 13,
+    "total_cook_x2": 17,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "spinach-mushroom-mozzarella-wine": {
+    "titleHe": "שקשוקה ירוקה עם פטריות, מוצרלה ויין",
+    "stages": [
+      {"name": "טיגון בצל", "time_min": 3, "time_x2": 4},
+      {"name": "שום + פטריות (עד שנוזל נעלם)", "time_min": 5, "time_x2": 7},
+      {"name": "צמצום יין לבן", "time_min": 2, "time_x2": 3},
+      {"name": "כמישת תרד", "time_min": 2, "time_x2": 3},
+      {"name": "תיבול", "time_min": 1, "time_x2": 1},
+      {"name": "פיזור מוצרלה + גומות", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים + המסת גבינה (אש נמוכה)", "time_min": 5, "time_x2": 7}
+    ],
+    "total_cook": 19,
+    "total_cook_x2": 26,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "bulgarian-cheese-hashef-halavan": {
+    "titleHe": "שקשוקה עם גבינה בולגרית — השף הלבן",
+    "stages": [
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עגבניות שרי + פלפל חריף", "time_min": 10, "time_x2": 13},
+      {"name": "הוספת סוכר", "time_min": 0, "time_x2": 0},
+      {"name": "פירור גבינה בולגרית", "time_min": 1, "time_x2": 1},
+      {"name": "גומות + ביצים (מכוסה)", "time_min": 4, "time_x2": 5},
+      {"name": "המתנה להמסת גבינה", "time_min": 3, "time_x2": 4}
+    ],
+    "total_cook": 19,
+    "total_cook_x2": 24,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "cheese-shakshuka-mutti": {
+    "titleHe": "שקשוקה עם גבינות — Mutti",
+    "stages": [
+      {"name": "הכנת מחית תבלין", "time_min": 2, "time_x2": 3},
+      {"name": "טיגון שום + עגבניות משומרות", "time_min": 2, "time_x2": 2},
+      {"name": "צמצום רוטב", "time_min": 15, "time_x2": 20},
+      {"name": "ערבוב מחית תבלין", "time_min": 1, "time_x2": 1},
+      {"name": "גבינה + גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "בישול ביצים", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 25,
+    "total_cook_x2": 32,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "community-museum-simcha-yosef": {
+    "titleHe": "שקשוקה קהילתית — שמחה יוסף",
+    "stages": [
+      {"name": "טיגון בצל", "time_min": 4, "time_x2": 5},
+      {"name": "בישול עגבניות עד סמיכות", "time_min": 12, "time_x2": 16},
+      {"name": "תיבול מינימלי", "time_min": 1, "time_x2": 1},
+      {"name": "הוספת גבינה בולגרית", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים (מכוסה)", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 22,
+    "total_cook_x2": 28,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "merguez-shakshuka-rafi-cohen": {
+    "titleHe": "שקשוקה עם מרגז — רפי כהן",
+    "stages": [
+      {"name": "טיגון מרגז + חיתוך", "time_min": 5, "time_x2": 7},
+      {"name": "טיגון שום ופלפלים חריפים", "time_min": 2, "time_x2": 2},
+      {"name": "פתיחת פפריקה וקימל", "time_min": 1, "time_x2": 1},
+      {"name": "בישול רוטב עגבניות", "time_min": 20, "time_x2": 25},
+      {"name": "החזרת מרגז לרוטב", "time_min": 1, "time_x2": 1},
+      {"name": "ביצים (מכוסה קצר)", "time_min": 3, "time_x2": 4}
+    ],
+    "total_cook": 32,
+    "total_cook_x2": 40,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "thai-green-shakshuka-curry": {
+    "titleHe": "שקשוקה ירוקה תאילנדית",
+    "stages": [
+      {"name": "ביצים רכות (בישול + קילוף)", "time_min": 7, "time_x2": 9},
+      {"name": "טיגון מחית קארי", "time_min": 1, "time_x2": 1},
+      {"name": "חלב קוקוס — רתיחה", "time_min": 3, "time_x2": 4},
+      {"name": "בישול ברוקולי", "time_min": 5, "time_x2": 7},
+      {"name": "כמישת תרד", "time_min": 2, "time_x2": 3},
+      {"name": "הנחת ביצים והגשה", "time_min": 1, "time_x2": 1}
+    ],
+    "total_cook": 19,
+    "total_cook_x2": 25,
+    "prep": 10,
+    "prep_x2": 15
+  },
+  "italian-shakshuka-eitan-acqua": {
+    "titleHe": "שקשוקה איטלקית — איתן אקוא",
+    "stages": [
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "רוטב עגבניות — רתיחה", "time_min": 8, "time_x2": 10},
+      {"name": "זיתי קלמטה + אורגנו", "time_min": 1, "time_x2": 1},
+      {"name": "גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "מוצרלה + בישול עד המסה", "time_min": 5, "time_x2": 7},
+      {"name": "קישוט בזיליקום", "time_min": 0, "time_x2": 0}
+    ],
+    "total_cook": 16,
+    "total_cook_x2": 20,
+    "prep": 10,
+    "prep_x2": 12
+  },
+  "single-pan-moshik-roth": {
+    "titleHe": "שקשוקה במחבת אחת — מושיק רוט",
+    "stages": [
+      {"name": "חימום בסיס מוכן", "time_min": 3, "time_x2": 4},
+      {"name": "רטיטה", "time_min": 1, "time_x2": 1},
+      {"name": "יצירת כיס + ביצה", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עד קרישת חלבון", "time_min": 3, "time_x2": 4},
+      {"name": "הגשה עם פיתה", "time_min": 0, "time_x2": 0}
+    ],
+    "total_cook": 8,
+    "total_cook_x2": 10,
+    "prep": 5,
+    "prep_x2": 5
+  },
+  "eggplant-vegan-cheese-christoph": {
+    "titleHe": "שקשוקה טבעונית עם חציל — כריסטוף",
+    "stages": [
+      {"name": "טיגון חציל עד הזהבה", "time_min": 8, "time_x2": 12},
+      {"name": "פלפלים ושום", "time_min": 2, "time_x2": 3},
+      {"name": "עגבניות + רסק עגבניות מיובשות", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עד סמיכות (שליטה עם מכסה)", "time_min": 15, "time_x2": 20},
+      {"name": "הוספת גבינה טבעונית", "time_min": 3, "time_x2": 4}
+    ],
+    "total_cook": 29,
+    "total_cook_x2": 40,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "eggplant-shakshuka-leiza-panels": {
+    "titleHe": "שקשוקה עם חציל — ליזה פנלים",
+    "stages": [
+      {"name": "טיגון חציל עד הזהבה", "time_min": 8, "time_x2": 12},
+      {"name": "גמבה ושום", "time_min": 2, "time_x2": 3},
+      {"name": "תבלינים (אורגנו, פפריקה, כמון)", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עגבניות משומרות", "time_min": 10, "time_x2": 13},
+      {"name": "גומות + ביצים", "time_min": 1, "time_x2": 1},
+      {"name": "שקיית חלבון ברוטב", "time_min": 4, "time_x2": 5}
+    ],
+    "total_cook": 26,
+    "total_cook_x2": 35,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "yolk-only-hila-alpert": {
+    "titleHe": "שקשוקת חלמונים — הילה אלפרט",
+    "stages": [
+      {"name": "טיגון בצל ופלפלים", "time_min": 5, "time_x2": 7},
+      {"name": "טיגון שום", "time_min": 1, "time_x2": 1},
+      {"name": "בישול עגבניות — צמצום לרוטב סמיך מאוד", "time_min": 18, "time_x2": 23},
+      {"name": "גומות + חלמונים בלבד", "time_min": 1, "time_x2": 1},
+      {"name": "אש נמוכה מאוד — חלמונים בקושי קרשו", "time_min": 5, "time_x2": 6}
+    ],
+    "total_cook": 30,
+    "total_cook_x2": 38,
+    "prep": 15,
+    "prep_x2": 20
+  },
+  "jerusalem-scrambled-edi-mizrachi": {
+    "titleHe": "מקושקשת ירושלמית — עדי מזרחי",
+    "stages": [
+      {"name": "טיגון בצל", "time_min": 4, "time_x2": 5},
+      {"name": "עגבניות + פלפל חריף — רוטב קצר", "time_min": 5, "time_x2": 7},
+      {"name": "שפיכת ביצים טרופות", "time_min": 1, "time_x2": 1},
+      {"name": "קשקוש עדין", "time_min": 3, "time_x2": 4},
+      {"name": "פיזור גבינה בולגרית", "time_min": 1, "time_x2": 1}
+    ],
+    "total_cook": 14,
+    "total_cook_x2": 18,
+    "prep": 10,
+    "prep_x2": 12
+  },
+  "optimal-red-synthesis": {
+    "titleHe": "הסינתזה האדומה האופטימלית",
+    "stages": [
+      {"name": "בסיס ארומטי + פתיחת תבלינים", "time_min": 5, "time_x2": 7},
+      {"name": "בישול רוטב עגבניות (סמיך)", "time_min": 20, "time_x2": 25},
+      {"name": "תיקון חמיצות + מלח", "time_min": 1, "time_x2": 1},
+      {"name": "גומות + ביצים (אש נמוכה מאוד)", "time_min": 4, "time_x2": 5},
+      {"name": "שליטה במכסה לפי העדפה", "time_min": 2, "time_x2": 3},
+      {"name": "עשבי תיבול + גבינה + הגשה", "time_min": 1, "time_x2": 1}
+    ],
+    "total_cook": 33,
+    "total_cook_x2": 42,
+    "prep": 15,
+    "prep_x2": 20
+  }
+}

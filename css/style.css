@@ -283,7 +283,7 @@ h6 {
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 0;
+  right: 0;
   width: 0;
   height: 2px;
   background: var(--tomato-red);
@@ -505,7 +505,7 @@ h6 {
 .search-input {
   width: 100%;
   padding: var(--space-md) var(--space-xl);
-  padding-left: 3rem;
+  padding-right: 3rem;
   border: 2px solid transparent;
   border-radius: var(--radius-full);
   font-family: var(--font-body);
@@ -636,6 +636,10 @@ h6 {
 /* 11. Recipe Cards
    ============================================ */
 .recipe-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -919,8 +923,10 @@ h6 {
    ============================================ */
 .step-item {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-lg);
   margin-bottom: var(--space-xl);
+  align-items: flex-start;
 }
 
 .step-number {
@@ -938,6 +944,21 @@ h6 {
   font-size: 1.1rem;
 }
 
+.step-time {
+  display: inline-flex;
+  align-items: center;
+  background: var(--cream, #fef9f0);
+  color: var(--tomato-red, #C0392B);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--tomato-red, #C0392B);
+  white-space: nowrap;
+  margin-top: 8px;
+  min-width: fit-content;
+}
+
 .step-content {
   flex: 1;
   padding-top: var(--space-sm);
@@ -951,8 +972,8 @@ h6 {
    ============================================ */
 .pro-tips {
   background: linear-gradient(135deg, var(--cream), var(--cream-dark));
-  border-left: 4px solid var(--yolk-gold);
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  border-right: 4px solid var(--yolk-gold);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   padding: var(--space-xl);
   margin: var(--space-xl) 0;
 }
@@ -969,7 +990,7 @@ h6 {
 }
 
 .pro-tips li {
-  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
   position: relative;
   line-height: 1.6;
 }
@@ -977,23 +998,32 @@ h6 {
 .pro-tips li::before {
   content: '💡';
   position: absolute;
-  left: 0;
+  right: 0;
 }
 
 /* 16. Star Rating
    ============================================ */
 .star-rating {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-xs);
+  margin: 1.5rem 0;
+}
+
+.star-rating .stars {
+  display: flex;
+  gap: 4px;
 }
 
 .star-rating .star {
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
-  color: var(--gray-300);
+  color: var(--gray-300, #ccc);
   background: none;
   border: none;
   padding: 0;
+  user-select: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -1176,7 +1206,10 @@ h6 {
   .search-container,
   .recipe-card-favorite,
   .star-rating,
-  .user-notes,
+  .meta-print-btn,
+  .meta-fav-btn,
+  #double-qty-btn,
+  .shopping-cart-float,
   .btn {
     display: none !important;
   }
@@ -1261,6 +1294,157 @@ h6 {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Recipe hero — reduce height on tablets */
+  .recipe-hero {
+    height: 35vh;
+  }
+
+  /* Page hero — reduce min-height */
+  .page-hero {
+    min-height: 260px;
+  }
+
+  .page-hero-content {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  /* Content sections — less vertical padding */
+  .content-section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Technique cards — compact padding */
+  .technique-card {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .technique-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .technique-icon {
+    font-size: 2rem;
+  }
+
+  /* Debate cards */
+  .debate-card {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .debate-bar-label {
+    width: 80px;
+    font-size: 0.8rem;
+  }
+
+  .debate-fun-fact {
+    padding: var(--space-md);
+  }
+
+  /* Ingredients header — wrap buttons */
+  .ingredients-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .ingredients-header .btn {
+    font-size: 0.75rem;
+    padding: var(--space-xs) var(--space-md);
+  }
+
+  /* Steps — tighter spacing */
+  .step-item {
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 0.95rem;
+  }
+
+  .step-time {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+  }
+
+  /* Pro tips */
+  .pro-tips {
+    padding: var(--space-lg);
+  }
+
+  /* User notes */
+  .user-notes {
+    padding: var(--space-lg);
+  }
+
+  .user-notes textarea {
+    min-height: 80px;
+  }
+
+  /* Related grid */
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About grid */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Favorites */
+  .favorites-actions {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  /* Source attribution */
+  .source-attribution {
+    font-size: 0.85rem;
+    padding: var(--space-md);
+  }
+
+  /* Recipe detail — less horizontal padding */
+  .recipe-detail {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  /* Chef quote */
+  .chef-quote {
+    padding: var(--space-md);
+  }
+
+  /* Etymology grid */
+  .etymology-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section titles */
+  .content-section .section-title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+  }
+
+  /* Content block */
+  .content-block {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-size: 0.8rem;
+  }
+
+  /* Recipe description */
+  .recipe-description {
+    font-size: 0.95rem;
+  }
 }
 
 /* Small phones */
@@ -1283,6 +1467,277 @@ h6 {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Recipe hero — even smaller on phones */
+  .recipe-hero {
+    height: 28vh;
+  }
+
+  .recipe-hero .hero-content h1 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  /* Page hero */
+  .page-hero {
+    min-height: 200px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+
+  .page-hero-content {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  /* Content sections */
+  .content-section {
+    padding: var(--space-lg) 0;
+  }
+
+  /* Recipe meta bar — wrap into grid on small phones */
+  .recipe-meta-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .meta-item {
+    min-width: 0;
+    font-size: 0.85rem;
+  }
+
+  .meta-item .meta-icon {
+    font-size: 1.2rem;
+  }
+
+  .meta-item .meta-label {
+    font-size: 0.6rem;
+  }
+
+  .meta-item .meta-value {
+    font-size: 0.8rem;
+  }
+
+  /* Technique cards */
+  .technique-card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .technique-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .technique-header h3,
+  .technique-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .technique-icon {
+    font-size: 1.8rem;
+  }
+
+  .technique-body p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .technique-list li {
+    font-size: 0.9rem;
+    padding-right: var(--space-lg);
+  }
+
+  .technique-tip {
+    padding: var(--space-md);
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  /* Debate cards */
+  .debate-card {
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .debate-question {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
+  .debate-bar-label {
+    width: 60px;
+    font-size: 0.75rem;
+  }
+
+  .debate-bar-track {
+    height: 24px;
+  }
+
+  .debate-bar-fill {
+    font-size: 0.75rem;
+  }
+
+  .debate-option .option-emoji {
+    font-size: 2rem;
+  }
+
+  .debate-option {
+    padding: var(--space-md);
+  }
+
+  .debate-fun-fact {
+    padding: var(--space-sm);
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .debate-divider {
+    margin: var(--space-xl) 0;
+  }
+
+  /* Step items */
+  .step-item {
+    gap: var(--space-sm);
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    font-size: 0.85rem;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+  }
+
+  /* Ingredients */
+  .ingredients-section {
+    padding: var(--space-md);
+  }
+
+  .ingredient-text {
+    font-size: 0.9rem;
+  }
+
+  /* Pro tips */
+  .pro-tips {
+    padding: var(--space-md);
+  }
+
+  .pro-tips li {
+    font-size: 0.9rem;
+  }
+
+  /* User notes */
+  .user-notes {
+    padding: var(--space-md);
+  }
+
+  /* Timeline */
+  .timeline-card {
+    padding: var(--space-md);
+  }
+
+  .timeline-card h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Etymology cards */
+  .etymology-card {
+    padding: var(--space-md);
+  }
+
+  .etymology-card .emoji {
+    font-size: 2rem;
+  }
+
+  /* Favorites */
+  .favorites-empty {
+    padding: var(--space-xl);
+  }
+
+  .favorites-empty .empty-icon {
+    font-size: 3rem;
+  }
+
+  /* About cards */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: var(--space-md);
+  }
+
+  /* Hero — main page */
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+  }
+
+  .hero-hebrew {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  /* Search on mobile */
+  .search-container {
+    max-width: 100% !important;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: var(--space-sm) var(--space-lg);
+    padding-right: 2.5rem;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-size: 0.75rem;
+  }
+
+  /* Content block */
+  .content-block {
+    font-size: 0.9rem;
+  }
+
+  /* Chef quote */
+  .chef-quote {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  /* Recipe description */
+  .recipe-description {
+    font-size: 0.9rem;
+  }
+
+  /* Recipe detail */
+  .recipe-detail {
+    padding: var(--space-sm) var(--space-xs);
+  }
+
+  /* Section spacing */
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Nav logo */
+  .nav-logo {
+    font-size: 1.2rem;
   }
 }
 
@@ -1603,31 +2058,181 @@ h6 {
   .navbar, .mobile-nav, .mobile-overlay,
   .hamburger, .theme-toggle, .search-container,
   .nav-favorites, .card-favorite-btn, .meta-fav-btn,
-  .add-all-shopping, .filter-btn, .footer,
-  .related-section, .user-notes, .star-rating,
-  .rating-section {
+  .meta-print-btn, .add-all-shopping, .filter-btn, .footer,
+  .related-section, .star-rating,
+  .rating-section, .shopping-cart-float,
+  #double-qty-btn, #add-shopping-list, #save-notes,
+  .saved-message, .source-attribution, .recipe-tags,
+  .breadcrumb-nav, .pro-tips {
     display: none !important;
   }
 
+  /* Hide hero image, show title as plain text */
   .recipe-hero {
-    min-height: auto;
-    padding: var(--space-lg);
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
+    background-image: none !important;
+    background: none !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+  }
+  .recipe-hero .hero-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .hero-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+  .hero-content {
+    position: static !important;
+    color: black !important;
+    padding: 4px 0 !important;
+    max-width: 100% !important;
+  }
+  .hero-content h1 {
+    color: black !important;
+    text-shadow: none !important;
+    font-size: 16pt !important;
+    margin: 0 !important;
+  }
+  .hero-content p {
+    color: #333 !important;
+    opacity: 1 !important;
+    font-size: 10pt !important;
+    margin: 2px 0 0 !important;
+  }
+  .hero-content .recipe-tag {
+    display: none !important;
+  }
+
+  /* Compact recipe detail */
+  .recipe-detail {
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .breadcrumb-nav, .breadcrumbs {
+    display: none !important;
   }
 
   body {
     background: white;
     color: black;
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+  }
+
+  @page {
+    margin: 10mm;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .recipe-content-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
 
   .recipe-detail {
     max-width: 100%;
+    padding: 0;
   }
+
+  .recipe-description {
+    font-size: 9pt;
+    margin: 2px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Compact meta bar */
+  .recipe-meta-bar {
+    padding: 4px 8px !important;
+    margin: 4px 0 !important;
+    gap: 4px !important;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    font-size: 9pt;
+    border-radius: 0 !important;
+  }
+  .meta-item { gap: 2px; }
+  .meta-icon { font-size: 10pt; }
+  .meta-label { font-size: 8pt; }
+  .meta-value { font-size: 9pt; }
+
+  /* Compact ingredients */
+  .ingredients-section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    padding: 4px 8px !important;
+  }
+  .ingredients-section h3 { font-size: 11pt; margin: 2px 0 !important; }
+  .ingredients-header { margin-bottom: 2px !important; }
+  .ingredient-item { padding: 1px 0 !important; margin: 0 !important; font-size: 9pt; }
+  .ingredient-checkbox { display: none !important; }
+
+  /* Compact steps */
+  .steps-section h3 { font-size: 11pt; margin: 2px 0 !important; }
+  .step-item {
+    margin-bottom: 2px !important;
+    gap: 4px !important;
+    page-break-inside: avoid;
+  }
+  .step-number {
+    width: 20px; height: 20px; min-width: 20px;
+    font-size: 0.75rem;
+  }
+  .step-time {
+    font-size: 0.6rem;
+    padding: 0px 3px;
+    margin-top: 2px;
+  }
+  .step-content { padding-top: 0 !important; }
+  .step-content p { font-size: 9pt; line-height: 1.25; margin: 0; }
+
+  /* Crush all extra spacing */
+  .recipe-content-grid {
+    gap: 4px !important;
+    margin: 0 !important;
+  }
+  .ingredients-list { margin: 0 !important; padding: 0 0 0 0 !important; }
+  .steps-list { margin: 0 !important; padding: 0 0 0 0 !important; }
+
+  /* Show user notes in print as plain text */
+  .user-notes {
+    display: block !important;
+    border: 1px solid #ccc;
+    padding: 4px 8px !important;
+    margin: 4px 0 !important;
+    page-break-inside: avoid;
+  }
+  .user-notes h3 { font-size: 11pt; margin: 2px 0 !important; }
+  .user-notes-input {
+    border: none !important;
+    background: none !important;
+    resize: none !important;
+    padding: 0 !important;
+    font-size: 9pt;
+    line-height: 1.3;
+    color: black;
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+  }
+  /* Hide notes section if textarea is empty (via JS print-empty class) */
+  .user-notes.print-empty { display: none !important; }
 }
 
 /* 26. Btn variants */
@@ -1650,7 +2255,7 @@ h6 {
 /* 27. Search Icon */
 .search-icon {
   position: absolute;
-  left: var(--space-md);
+  right: var(--space-md);
   top: 50%;
   transform: translateY(-50%);
   font-size: 1rem;
@@ -1747,7 +2352,7 @@ h6 {
   content: '';
   position: absolute;
   bottom: -8px;
-  left: 0;
+  right: 0;
   width: 60px;
   height: 3px;
   background: var(--tomato-red);
@@ -1788,9 +2393,9 @@ h6 {
 
 .content-block .quote-callout {
   background: linear-gradient(135deg, var(--cream), var(--cream-dark));
-  border-left: 4px solid var(--yolk-gold);
+  border-right: 4px solid var(--yolk-gold);
   padding: var(--space-lg) var(--space-xl);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
   margin: var(--space-xl) 0;
   font-style: italic;
   font-size: 1.1rem;
@@ -1966,7 +2571,7 @@ h6 {
   margin-bottom: var(--space-2xl);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal);
-  border-left: 4px solid var(--tomato-red);
+  border-right: 4px solid var(--tomato-red);
 }
 
 .technique-card:hover {
@@ -1975,15 +2580,15 @@ h6 {
 }
 
 .technique-card.green-border {
-  border-left-color: var(--olive-green);
+  border-right-color: var(--olive-green);
 }
 
 .technique-card.gold-border {
-  border-left-color: var(--yolk-gold);
+  border-right-color: var(--yolk-gold);
 }
 
 .technique-card.iron-border {
-  border-left-color: var(--cast-iron);
+  border-right-color: var(--cast-iron);
 }
 
 .technique-header {
@@ -2041,7 +2646,7 @@ h6 {
 
 .technique-list li {
   padding: var(--space-sm) 0;
-  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
   position: relative;
   line-height: 1.7;
   color: var(--gray-700);
@@ -2050,17 +2655,17 @@ h6 {
 .technique-list li::before {
   content: '✦';
   position: absolute;
-  left: 0;
+  right: 0;
   color: var(--tomato-red);
   font-size: 0.8rem;
 }
 
 .chef-quote {
   background: var(--gray-100);
-  border-left: 3px solid var(--yolk-gold);
+  border-right: 3px solid var(--yolk-gold);
   padding: var(--space-md) var(--space-lg);
   margin: var(--space-md) 0;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
   font-style: italic;
 }
 

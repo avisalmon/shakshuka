@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Great Debates — Shakshuka</title>
-  <meta name="description" content="The great shakshuka debates — onion or not, cheese or heresy, lid on or off? Cast your vote and see where you stand.">
+  <title>ויכוחים גדולים | שקשוקה</title>
+  <meta name="description" content="הוויכוחים הגדולים של השקשוקה &ndash; בצל או בלי, גבינה או חילול הקודש, מכסה או בלי? הצביעו ובחרו צד.">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/app.js" defer></script>
 </head>
@@ -12,254 +12,235 @@
 
 <nav class="navbar">
   <div class="nav-container">
-    <a href="index.html" class="nav-logo"><span>🍳</span> Shakshuka</a>
+    <a href="index.html" class="nav-logo"><span>🍳</span> שקשוקה</a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#recipes" class="nav-link">Recipes</a>
-      <a href="history.html" class="nav-link">History</a>
-      <a href="techniques.html" class="nav-link">Techniques</a>
-      <a href="debates.html" class="nav-link active">Debates</a>
+      <a href="index.html" class="nav-link">בית</a>
+      <a href="index.html#recipes" class="nav-link">מתכונים</a>
+      <a href="history.html" class="nav-link">היסטוריה</a>
+      <a href="techniques.html" class="nav-link">טכניקות</a>
+      <a href="debates.html" class="nav-link active">ויכוחים</a>
     </div>
     <div class="nav-actions">
       <div class="search-container" style="max-width:200px;">
         <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" placeholder="Search recipes..." aria-label="Search recipes">
+        <input type="text" class="search-input" placeholder="חיפוש מתכונים..." aria-label="חיפוש מתכונים">
         <div class="search-results"></div>
       </div>
-      <a href="favorites.html" class="nav-favorites" aria-label="Favorites">❤️ <span class="favorites-badge" style="display:none">0</span></a>
-      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
-      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <a href="favorites.html" class="nav-favorites" aria-label="מועדפים">❤️ <span class="favorites-badge" style="display:none">0</span></a>
+      <button class="theme-toggle" aria-label="החלפת ערכת נושא">🌙</button>
+      <button class="hamburger" aria-label="תפריט"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="mobile-overlay"></div>
 <div class="mobile-nav">
-  <a href="index.html" class="mobile-nav-link">🏠 Home</a>
-  <a href="index.html#recipes" class="mobile-nav-link">🍳 All Recipes</a>
-  <a href="history.html" class="mobile-nav-link">📜 History</a>
-  <a href="techniques.html" class="mobile-nav-link">👨‍🍳 Techniques</a>
-  <a href="debates.html" class="mobile-nav-link">⚔ Debates</a>
-  <a href="favorites.html" class="mobile-nav-link">❤️ Favorites</a>
-  <a href="about.html" class="mobile-nav-link">ℹ️ About</a>
+  <a href="index.html" class="mobile-nav-link">🏠 בית</a>
+  <a href="index.html#recipes" class="mobile-nav-link">🍳 כל המתכונים</a>
+  <a href="history.html" class="mobile-nav-link">📜 היסטוריה</a>
+  <a href="techniques.html" class="mobile-nav-link">👨‍🍳 טכניקות</a>
+  <a href="debates.html" class="mobile-nav-link">⚔ ויכוחים</a>
+  <a href="favorites.html" class="mobile-nav-link">❤️ מועדפים</a>
+  <a href="about.html" class="mobile-nav-link">ℹ️ אודות</a>
 </div>
 
-<!-- Hero -->
+<!-- גיבור -->
 <section class="page-hero debates-hero">
   <div class="page-hero-content">
-    <h1>⚔️ The Great Debates</h1>
-    <p class="hero-subtitle">Every shakshuka lover has opinions. Strong ones. Pick your side.</p>
-    <p class="hero-hebrew">הוויכוחים הגדולים של השקשוקה</p>
+    <h1>⚔️ הוויכוחים הגדולים</h1>
+    <p class="hero-subtitle">לכל חובב שקשוקה יש דעות. דעות חזקות. בחרו צד.</p>
   </div>
 </section>
 
 <section class="content-section">
   <div class="container">
 
-    <!-- Debate 1: Onion or No Onion -->
+    <!-- ויכוח 1: בצל או בלי -->
     <div class="debate-card fade-in" data-debate="onion">
-      <h2 class="debate-question">Onion or No Onion?</h2>
-      <p class="debate-question-he">בצל או בלי בצל?</p>
-      <p class="debate-context">Only 10 out of 21 recipes in our research use onion — a major stylistic divide.</p>
+      <h2 class="debate-question">בצל או בלי בצל?</h2>
+      <p class="debate-context">רק 10 מתוך 21 מתכונים במחקר שלנו משתמשים בבצל &ndash; פער סגנוני משמעותי.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="onion">
           <span class="option-emoji">🧅</span>
-          <span class="option-label">Team Onion</span>
-          <span class="option-label-he">צוות בצל</span>
+          <span class="option-label">צוות בצל</span>
         </button>
         <button class="debate-option" data-value="no-onion">
           <span class="option-emoji">🚫</span>
-          <span class="option-label">No Onion</span>
-          <span class="option-label-he">בלי בצל</span>
+          <span class="option-label">בלי בצל</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🧅 Team Onion</span>
+          <span class="debate-bar-label">🧅 צוות בצל</span>
           <div class="debate-bar-track"><div class="debate-bar-fill red" data-option="onion"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🚫 No Onion</span>
+          <span class="debate-bar-label">🚫 בלי בצל</span>
           <div class="debate-bar-track"><div class="debate-bar-fill green" data-option="no-onion"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        The 'best recipe' source declares explicitly: לא משתמשים בבצל. Eyal Shani and Orly &amp; Shay-Lee also skip it. Counter-position: Sarit Atar, Rotem Liberzon, and Anat Label build on onion for sweetness and depth.
+        מקור &laquo;המתכון הטוב ביותר&raquo; מצהיר במפורש: לא משתמשים בבצל. גם אייל שני, אורלי ושי&ndash;לי מדלגים עליו. מהצד השני: שרית עטר, רותם ליברזון וענת לייבל בונים על הבצל למתיקות ועומק.
       </div>
     </div>
 
     <div class="debate-divider">🍳</div>
 
-    <!-- Debate 2: Cheese or Heresy -->
+    <!-- ויכוח 2: גבינה או חילול הקודש -->
     <div class="debate-card fade-in" data-debate="cheese">
-      <h2 class="debate-question">Cheese: Yes or Heresy?</h2>
-      <p class="debate-question-he">גבינה: כן או חילול הקודש?</p>
-      <p class="debate-context">10 out of 22 recipes in our research include cheese — Bulgarian, feta, mozzarella, even vegan.</p>
+      <h2 class="debate-question">גבינה: כן או חילול הקודש?</h2>
+      <p class="debate-context">10 מתוך 22 מתכונים במחקר שלנו כוללים גבינה &ndash; בולגרית, פטה, מוצרלה, ואפילו טבעונית.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="cheese">
           <span class="option-emoji">🧀</span>
-          <span class="option-label">Cheese Please</span>
-          <span class="option-label-he">כן לגבינה</span>
+          <span class="option-label">כן לגבינה</span>
         </button>
         <button class="debate-option" data-value="no-cheese">
           <span class="option-emoji">✋</span>
-          <span class="option-label">Pure &amp; Classic</span>
-          <span class="option-label-he">קלאסית בלבד</span>
+          <span class="option-label">קלאסית בלבד</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🧀 Cheese Please</span>
+          <span class="debate-bar-label">🧀 כן לגבינה</span>
           <div class="debate-bar-track"><div class="debate-bar-fill gold" data-option="cheese"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">✋ Pure &amp; Classic</span>
+          <span class="debate-bar-label">✋ קלאסית בלבד</span>
           <div class="debate-bar-track"><div class="debate-bar-fill red" data-option="no-cheese"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        Cheese appears in traditional ANU Museum recipes, commercial brands (Mutti), and professional chefs alike. It's added after sauce reduction so it doesn't 'break' the sauce.
+        גבינה מופיעה גם במתכוני מוזיאון ANU, גם אצל מותגים מסחריים (Mutti) וגם אצל שפים מקצועיים. היא מתווספת אחרי צמצום הרוטב כדי שלא &laquo;תשבור&raquo; אותו.
       </div>
     </div>
 
     <div class="debate-divider">🍳</div>
 
-    <!-- Debate 3: Lid On or Off -->
+    <!-- ויכוח 3: מכסה או בלי -->
     <div class="debate-card fade-in" data-debate="lid">
-      <h2 class="debate-question">Lid On or Off?</h2>
-      <p class="debate-question-he">מכסה או בלי?</p>
-      <p class="debate-context">This produces genuinely different results — it's physics, not opinion.</p>
+      <h2 class="debate-question">מכסה או בלי?</h2>
+      <p class="debate-context">זה מייצר תוצאות שונות לגמרי &ndash; פיזיקה, לא דעה.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="lid-on">
           <span class="option-emoji">🫕</span>
-          <span class="option-label">Lid On</span>
-          <span class="option-label-he">עם מכסה</span>
+          <span class="option-label">עם מכסה</span>
         </button>
         <button class="debate-option" data-value="lid-off">
           <span class="option-emoji">🍳</span>
-          <span class="option-label">Lid Off</span>
-          <span class="option-label-he">בלי מכסה</span>
+          <span class="option-label">בלי מכסה</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🫕 Lid On</span>
+          <span class="debate-bar-label">🫕 עם מכסה</span>
           <div class="debate-bar-track"><div class="debate-bar-fill green" data-option="lid-on"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🍳 Lid Off</span>
+          <span class="debate-bar-label">🍳 בלי מכסה</span>
           <div class="debate-bar-track"><div class="debate-bar-fill iron" data-option="lid-off"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        Lid on = steam cooks from above → wetter, more uniform egg. Lid off = drier texture, avoids the 'white film' (קרום לבן) on yolk. Racheli Krut warns against lid during egg stage; Eyal Shani explicitly says no lid.
+        מכסה = אדים מבשלים מלמעלה &rarr; ביצה לחה ואחידה יותר. בלי מכסה = מרקם יבש יותר, נמנעים מהקרום הלבן על החלמון. רחלי קרוט מזהירה מפני מכסה בשלב הביצים; אייל שני אומר במפורש &ndash; בלי מכסה.
       </div>
     </div>
 
     <div class="debate-divider">🍳</div>
 
-    <!-- Debate 4: Fresh or Canned Tomatoes -->
+    <!-- ויכוח 4: עגבניות טריות או משומרות -->
     <div class="debate-card fade-in" data-debate="tomatoes">
-      <h2 class="debate-question">Fresh or Canned Tomatoes?</h2>
-      <p class="debate-question-he">עגבניות טריות או משומרות?</p>
-      <p class="debate-context">Professional consensus: seasonality matters. But in Israel, shakshuka became 'tomatoes year-round.'</p>
+      <h2 class="debate-question">עגבניות טריות או משומרות?</h2>
+      <p class="debate-context">הקונצנזוס המקצועי: העונתיות חשובה. אבל בישראל, שקשוקה הפכה ל&laquo;עגבניות כל השנה&raquo;.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="fresh">
           <span class="option-emoji">🍅</span>
-          <span class="option-label">Fresh Only</span>
-          <span class="option-label-he">רק טריות</span>
+          <span class="option-label">רק טריות</span>
         </button>
         <button class="debate-option" data-value="canned">
           <span class="option-emoji">🥫</span>
-          <span class="option-label">Canned is Fine</span>
-          <span class="option-label-he">גם משומרות</span>
+          <span class="option-label">גם משומרות</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🍅 Fresh Only</span>
+          <span class="debate-bar-label">🍅 רק טריות</span>
           <div class="debate-bar-track"><div class="debate-bar-fill red" data-option="fresh"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🥫 Canned is Fine</span>
+          <span class="debate-bar-label">🥫 גם משומרות</span>
           <div class="debate-bar-track"><div class="debate-bar-fill gold" data-option="canned"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        Rafi Cohen explicitly warns against unripe tomatoes. The Italian approach: fresh only when ripe and in-season (summer), canned in winter — כמו שהאיטלקים עושים.
+        רפי כהן מזהיר במפורש מפני עגבניות שאינן בשלות. הגישה האיטלקית: טריות רק כשבשלות ובעונה (קיץ), משומרות בחורף &ndash; כמו שהאיטלקים עושים.
       </div>
     </div>
 
     <div class="debate-divider">🍳</div>
 
-    <!-- Debate 5: Peel or Not Peel -->
+    <!-- ויכוח 5: לקלף או לא -->
     <div class="debate-card fade-in" data-debate="peel">
-      <h2 class="debate-question">Peel Tomatoes or Not?</h2>
-      <p class="debate-question-he">לקלף את העגבניות?</p>
-      <p class="debate-context">Sarit Atar addresses the 'peeling myth' — 'I don't peel.'</p>
+      <h2 class="debate-question">לקלף את העגבניות?</h2>
+      <p class="debate-context">שרית עטר מתייחסת ל&laquo;מיתוס הקילוף&raquo;: &laquo;אני לא מקלפת&raquo;.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="peel">
           <span class="option-emoji">🔪</span>
-          <span class="option-label">Always Peel</span>
-          <span class="option-label-he">תמיד לקלף</span>
+          <span class="option-label">תמיד לקלף</span>
         </button>
         <button class="debate-option" data-value="no-peel">
           <span class="option-emoji">💪</span>
-          <span class="option-label">Skins Stay</span>
-          <span class="option-label-he">עם הקליפה</span>
+          <span class="option-label">עם הקליפה</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🔪 Always Peel</span>
+          <span class="debate-bar-label">🔪 תמיד לקלף</span>
           <div class="debate-bar-track"><div class="debate-bar-fill iron" data-option="peel"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">💪 Skins Stay</span>
+          <span class="debate-bar-label">💪 עם הקליפה</span>
           <div class="debate-bar-track"><div class="debate-bar-fill green" data-option="no-peel"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        Blog commenters defend not peeling for nutritional value and color. Some chefs insist on blanching and peeling (חליטה+קילוף) for a smoother sauce.
+        תגובות בבלוגים מגנות על אי&ndash;קילוף בזכות ערך תזונתי וצבע. שפים מסוימים מתעקשים על חליטה וקילוף לרוטב חלק יותר. אייל שני עושה את שניהם &ndash; חולט, מקלף, וחותך.
       </div>
     </div>
 
     <div class="debate-divider">🍳</div>
 
-    <!-- Debate 6: Wells or Scrambled -->
+    <!-- ויכוח 6: גומות או מקושקש -->
     <div class="debate-card fade-in" data-debate="eggs">
-      <h2 class="debate-question">Wells or Scrambled?</h2>
-      <p class="debate-question-he">בארות או מעורבב?</p>
-      <p class="debate-context">Edi Mizrachi's 'Jerusalem Shakshuka' proved the name is flexible.</p>
+      <h2 class="debate-question">ביצים בגומות או מקושקש?</h2>
+      <p class="debate-context">ה&laquo;שקשוקה הירושלמית&raquo; של עדי מזרחי הוכיחה שהשם גמיש.</p>
       <div class="debate-options">
         <button class="debate-option" data-value="wells">
           <span class="option-emoji">🕳️</span>
-          <span class="option-label">Egg Wells</span>
-          <span class="option-label-he">ביצים בגומות</span>
+          <span class="option-label">ביצים בגומות</span>
         </button>
         <button class="debate-option" data-value="scrambled">
           <span class="option-emoji">🥄</span>
-          <span class="option-label">Scrambled In</span>
-          <span class="option-label-he">מעורבב</span>
+          <span class="option-label">מקושקש</span>
         </button>
       </div>
       <div class="debate-result" style="display:none">
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🕳️ Egg Wells</span>
+          <span class="debate-bar-label">🕳️ ביצים בגומות</span>
           <div class="debate-bar-track"><div class="debate-bar-fill red" data-option="wells"></div></div>
         </div>
         <div class="debate-bar-row">
-          <span class="debate-bar-label">🥄 Scrambled In</span>
+          <span class="debate-bar-label">🥄 מקושקש</span>
           <div class="debate-bar-track"><div class="debate-bar-fill gold" data-option="scrambled"></div></div>
         </div>
       </div>
       <div class="debate-fun-fact">
         <span class="fact-icon">💡</span>
-        The 'Jerusalem Scrambled Shakshuka' (שקשוקה ירושלמית) from MasterChef is essentially scrambled eggs on a short sauce — proving the name's definition isn't locked to 'egg in a well.'
+        ה&laquo;שקשוקה הירושלמית&raquo; של עדי מזרחי ממאסטרשף היא בעצם ביצים טרופות מעל רוטב קצר &ndash; מה שמוכיח שההגדרה של השם לא נעולה על &laquo;ביצה בגומה&raquo;.
       </div>
     </div>
 
@@ -270,50 +251,48 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>🍳 Shakshuka</h4>
-        <p>Celebrating Israel's beloved egg dish — from the classic red to bold fusions.</p>
+        <h4>🍳 שקשוקה</h4>
+        <p>חוגגים את מנת הביצים האהובה של ישראל &ndash; מהקלאסית האדומה ועד פיוז׳נים נועזים.</p>
       </div>
       <div class="footer-col">
-        <h4>Categories</h4>
+        <h4>קטגוריות</h4>
         <ul class="footer-links">
-          <li><a href="index.html#classic-red">Classic Red</a></li>
-          <li><a href="index.html#green">Green</a></li>
-          <li><a href="index.html#cheese">Cheese</a></li>
-          <li><a href="index.html#meat">Meat</a></li>
-          <li><a href="index.html#fusion">Fusion</a></li>
+          <li><a href="index.html#classic-red">קלאסית אדומה</a></li>
+          <li><a href="index.html#green">ירוקה</a></li>
+          <li><a href="index.html#cheese">עם גבינה</a></li>
+          <li><a href="index.html#meat">עם בשר</a></li>
+          <li><a href="index.html#fusion">פיוז׳ן</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
+        <h4>גלו</h4>
         <ul class="footer-links">
-          <li><a href="history.html">History & Origins</a></li>
-          <li><a href="techniques.html">Techniques</a></li>
-          <li><a href="debates.html">Great Debates</a></li>
-          <li><a href="favorites.html">My Favorites</a></li>
+          <li><a href="history.html">היסטוריה ומקורות</a></li>
+          <li><a href="techniques.html">טכניקות</a></li>
+          <li><a href="debates.html">ויכוחים גדולים</a></li>
+          <li><a href="favorites.html">המועדפים שלי</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Project</h4>
+        <h4>פרויקט</h4>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">אודות</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Shakshuka — Made with 🍅 and ❤️</p>
+      <p>© 2025 שקשוקה &ndash; נבנה עם 🍅 ו&ndash;❤️</p>
     </div>
   </div>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize debates
   document.querySelectorAll('.debate-card').forEach(card => {
     const debateId = card.dataset.debate;
     const options = card.querySelectorAll('.debate-option');
     const saved = Votes.getVote(debateId);
-    
-    // Restore saved vote
+
     if (saved) {
       options.forEach(opt => {
         if (opt.dataset.value === saved) {
@@ -322,33 +301,27 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       showResult(card, saved);
     }
-    
-    // Click handlers
+
     options.forEach(opt => {
       opt.addEventListener('click', () => {
         const value = opt.dataset.value;
         Votes.vote(debateId, value);
-        
-        // Update selection
         options.forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
-        
         showResult(card, value);
       });
     });
   });
-  
+
   function showResult(card, selected) {
     const resultDiv = card.querySelector('.debate-result');
     if (!resultDiv) return;
     resultDiv.style.display = 'block';
-    
-    // Animate bars
     const bars = resultDiv.querySelectorAll('.debate-bar-fill');
     bars.forEach(bar => {
       const isSelected = bar.dataset.option === selected;
       bar.style.width = isSelected ? '100%' : '0%';
-      bar.textContent = isSelected ? '✓ Your vote' : '';
+      bar.textContent = isSelected ? '✓ ההצבעה שלך' : '';
     });
   }
 });

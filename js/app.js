@@ -1,5 +1,5 @@
 /* ============================================
-   SHAKSHUKA RECIPE SITE — Core JavaScript
+   SHAKSHUKA RECIPE SITE - Core JavaScript
    Pure Vanilla JS, No Frameworks
    ============================================ */
 
@@ -253,6 +253,11 @@ let _recipesCache = null;
 
 async function loadRecipes() {
   if (_recipesCache) return _recipesCache;
+  // Check if recipe data is available globally (inlined in index.html)
+  if (window._allRecipesData) {
+    _recipesCache = window._allRecipesData;
+    return _recipesCache;
+  }
   const isSubpage = window.location.pathname.includes('/recipes/');
   const path = isSubpage ? '../data/recipes.json' : 'data/recipes.json';
   try {
@@ -295,12 +300,12 @@ function initSearch() {
       }).slice(0, 8);
 
       if (matches.length === 0) {
-        searchResults.innerHTML = '<div class="search-result-item no-results">No recipes found</div>';
+        searchResults.innerHTML = '<div class="search-result-item no-results">לא נמצאו מתכונים</div>';
       } else {
         searchResults.innerHTML = matches.map(r =>
           `<a href="${prefix}${r.slug}.html" class="search-result-item">
-            <span class="search-result-title">${r.titleEn}</span>
-            <span class="search-result-category">${r.categoryEn}</span>
+            <span class="search-result-title">${r.titleHe}</span>
+            <span class="search-result-category">${r.categoryHe}</span>
           </a>`
         ).join('');
       }
@@ -391,7 +396,7 @@ function createRecipeCard(recipe) {
   const isFav = Favorites.isFavorite(recipe.slug);
   const totalTime = (recipe.prepTime || 0) + (recipe.cookTime || 0);
   const imageContent = recipe.image
-    ? `<img src="${recipe.image}" alt="${recipe.titleEn}" loading="lazy">`
+    ? `<img src="${recipe.image}" alt="${recipe.titleHe}" loading="lazy">`
     : `<div class="card-image-placeholder">
         <span class="placeholder-text">${recipe.titleHe}</span>
       </div>`;
@@ -400,16 +405,16 @@ function createRecipeCard(recipe) {
     <div class="card-image">
       ${imageContent}
       <button class="card-favorite-btn" data-favorite="${recipe.slug}">${isFav ? '❤️' : '🤍'}</button>
-      <span class="card-category-badge">${recipe.categoryEn}</span>
+      <span class="card-category-badge">${recipe.categoryHe}</span>
     </div>
     <div class="card-body">
-      <h3 class="card-title">${recipe.titleEn}</h3>
-      <p class="card-title-he">${recipe.titleHe}</p>
-      <p class="card-author">${recipe.authorEn || recipe.author}</p>
+      <h3 class="card-title" dir="rtl">${recipe.titleHe}</h3>
+      
+      <p class="card-author" dir="rtl">${recipe.author}</p>
       <div class="card-meta">
-        <span class="card-meta-item">🕐 ${totalTime} min</span>
+        <span class="card-meta-item">🕐 ${totalTime} דק'</span>
         <span class="card-meta-item">🍽️ ${recipe.servings}</span>
-        <span class="card-meta-item">${recipe.difficulty}</span>
+        <span class="card-meta-item">${{'Easy':'קל','Medium':'בינוני','Hard':'מאתגר'}[recipe.difficulty] || recipe.difficulty}</span>
       </div>
     </div>
   </a>`;
@@ -468,7 +473,7 @@ function getFooterHTML(isSubpage = false) {
       <div class="footer-grid">
         <div class="footer-col">
           <h4 class="footer-heading">🍳 Shakshuka</h4>
-          <p class="footer-about">Celebrating Israel's beloved egg dish — from the classic red to bold fusions. Recipes, history, techniques, and spirited debates.</p>
+          <p class="footer-about">Celebrating Israel's beloved egg dish - from the classic red to bold fusions. Recipes, history, techniques, and spirited debates.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Categories</h4>
@@ -498,7 +503,7 @@ function getFooterHTML(isSubpage = false) {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; ${new Date().getFullYear()} Shakshuka — Made with 🍅 and ❤️</p>
+        <p>&copy; ${new Date().getFullYear()} Shakshuka - Made with 🍅 and ❤️</p>
       </div>
     </div>
   </footer>`;
@@ -545,7 +550,7 @@ function initRecipePage() {
     }
   }
 
-  // Shopping list — add checked ingredients
+  // Shopping list - add checked ingredients
   const addShoppingBtn = document.querySelector('#add-shopping-list');
   if (addShoppingBtn) {
     addShoppingBtn.addEventListener('click', () => {
@@ -558,8 +563,8 @@ function initRecipePage() {
         count++;
       });
       if (count > 0) {
-        addShoppingBtn.textContent = `✓ Added ${count} item${count > 1 ? 's' : ''}`;
-        setTimeout(() => { addShoppingBtn.textContent = '🛒 Add to Shopping List'; }, 2000);
+        addShoppingBtn.textContent = `✓ נוספו ${count} פריטים`;
+        setTimeout(() => { addShoppingBtn.textContent = '🛒 הוסף לרשימת קניות'; }, 2000);
         updateShoppingBadge();
       }
     });
@@ -575,7 +580,7 @@ function initShoppingListPage() {
   // Floating cart button
   const cartBtn = document.createElement('button');
   cartBtn.className = 'shopping-cart-float';
-  cartBtn.setAttribute('aria-label', 'Shopping List');
+  cartBtn.setAttribute('aria-label', 'רשימת קניות');
   cartBtn.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;width:56px;height:56px;border-radius:50%;border:none;background:var(--accent,#e74c3c);color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;';
   cartBtn.innerHTML = '🛒<span class="cart-badge" style="position:absolute;top:-4px;right:-4px;background:#333;color:#fff;border-radius:50%;min-width:20px;height:20px;font-size:12px;display:flex;align-items:center;justify-content:center;padding:2px;">0</span>';
   document.body.appendChild(cartBtn);
@@ -591,13 +596,13 @@ function initShoppingListPage() {
 
   panel.innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <h3 style="margin:0;">🛒 Shopping List</h3>
+      <h3 style="margin:0;">🛒 רשימת קניות</h3>
       <button class="shopping-modal-close" style="background:none;border:none;font-size:20px;cursor:pointer;color:inherit;">✕</button>
     </div>
     <div class="shopping-items-list"></div>
     <div style="display:flex;gap:8px;margin-top:16px;">
-      <button class="shopping-copy-btn" style="flex:1;padding:8px;border:1px solid var(--border-color,#ccc);border-radius:6px;background:var(--card-bg,#fff);color:inherit;cursor:pointer;">📋 Copy</button>
-      <button class="shopping-clear-btn" style="flex:1;padding:8px;border:1px solid var(--border-color,#ccc);border-radius:6px;background:var(--card-bg,#fff);color:inherit;cursor:pointer;">🗑️ Clear All</button>
+      <button class="shopping-copy-btn" style="flex:1;padding:8px;border:1px solid var(--border-color,#ccc);border-radius:6px;background:var(--card-bg,#fff);color:inherit;cursor:pointer;">📋 העתק</button>
+      <button class="shopping-clear-btn" style="flex:1;padding:8px;border:1px solid var(--border-color,#ccc);border-radius:6px;background:var(--card-bg,#fff);color:inherit;cursor:pointer;">🗑️ נקה הכל</button>
     </div>
   `;
 
@@ -608,7 +613,7 @@ function initShoppingListPage() {
     const items = ShoppingList.getAll();
     const list = panel.querySelector('.shopping-items-list');
     if (items.length === 0) {
-      list.innerHTML = '<p style="text-align:center;opacity:.6;">Your shopping list is empty</p>';
+      list.innerHTML = '<p style="text-align:center;opacity:.6;">רשימת הקניות ריקה</p>';
     } else {
       list.innerHTML = items.map((item, idx) =>
         `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border-color,#eee);">
@@ -766,10 +771,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   Favorites.updateBadge();
 
-  const path = window.location.pathname;
+  const path = window.location.pathname.replace(/\\/g, '/');
 
   // Auto-detect page type
-  if (path.includes('/recipes/')) {
+  if (path.includes('/recipes/') || document.querySelector('.star-rating[data-recipe]')) {
     initRecipePage();
   }
   if (path.includes('debates')) {
