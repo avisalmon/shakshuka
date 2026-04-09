@@ -71,8 +71,9 @@
 
 /* 3. Dark Mode
    ============================================ */
+/* Only apply OS dark preference when no explicit theme is set */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
     --cream: #1C1C1C;
     --cream-dark: #252525;
     --white: #141414;
@@ -90,6 +91,25 @@
   }
 }
 
+/* Explicit light mode — overrides OS dark preference */
+[data-theme="light"] {
+  --cream: #F8F8F8;
+  --cream-dark: #F0F0F0;
+  --cast-iron: #1A1A1A;
+  --cast-iron-light: #2D2D2D;
+  --white: #FFFFFF;
+  --gray-100: #F3F3F3;
+  --gray-200: #E0E0E0;
+  --gray-300: #C8C8C8;
+  --gray-400: #9E9E9E;
+  --gray-500: #707070;
+  --gray-600: #505050;
+  --gray-700: #373737;
+  --gray-800: #1F1F1F;
+  --gray-900: #111111;
+}
+
+/* Explicit dark mode */
 [data-theme="dark"] {
   --cream: #1C1C1C;
   --cream-dark: #252525;
