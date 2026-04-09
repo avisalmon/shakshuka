@@ -14,22 +14,22 @@
   --tomato-red: #C0392B;
   --tomato-dark: #96281B;
   --tomato-light: #E74C3C;
-  --yolk-gold: #F39C12;
+  --yolk-gold: #E8900C;
   --yolk-light: #F5B041;
   --olive-green: #27AE60;
   --olive-dark: #1E8449;
-  --cream: #FFFAF3;
-  --cream-dark: #FFF0DB;
-  --cast-iron: #2C3E50;
-  --cast-iron-light: #34495E;
+  --cream: #F8F8F8;
+  --cream-dark: #F0F0F0;
+  --cast-iron: #1A1A1A;
+  --cast-iron-light: #2D2D2D;
   --white: #FFFFFF;
-  --gray-100: #F5F5F5;
-  --gray-200: #E8E8E8;
-  --gray-300: #D1D1D1;
+  --gray-100: #F3F3F3;
+  --gray-200: #E0E0E0;
+  --gray-300: #C8C8C8;
   --gray-400: #9E9E9E;
-  --gray-500: #6B6B6B;
-  --gray-600: #4A4A4A;
-  --gray-700: #333333;
+  --gray-500: #707070;
+  --gray-600: #505050;
+  --gray-700: #373737;
   --gray-800: #1F1F1F;
   --gray-900: #111111;
 
@@ -947,7 +947,7 @@ h6 {
 .step-time {
   display: inline-flex;
   align-items: center;
-  background: var(--cream, #fef9f0);
+  background: var(--cream, #f8f8f8);
   color: var(--tomato-red, #C0392B);
   font-size: 0.8rem;
   font-weight: 600;
@@ -2621,7 +2621,7 @@ h6 {
 }
 
 .technique-tip {
-  background: linear-gradient(135deg, #FFF5E6, #FDEBD0);
+  background: var(--cream-dark);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   margin: var(--space-lg) 0;
@@ -2834,7 +2834,7 @@ h6 {
 }
 
 .debate-fun-fact {
-  background: linear-gradient(135deg, #FFF5E6, #FDEBD0);
+  background: var(--cream-dark);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   margin-top: var(--space-xl);
