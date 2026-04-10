@@ -1,0 +1,130 @@
+VALIDATION REPORT
+==================================================
+
+Total recipes: 10
+All sourceVerified: True
+All images exist and are valid JPEG files
+Validation run: ALL 10 PASS, 0 FAIL
+
+Per-Recipe Details:
+--------------------------------------------------
+
+Recipe: שקשוקה של Mutti (Mutti's Shakshuka)
+  Slug: mutti-shakshuka
+  Author: Mutti Israel
+  Source: https://mutti.co.il/recipe/shakshuka/
+  Verified: True
+  Category: cheese (עם גבינות)
+  Ingredients: 17
+  Steps: 6
+  Image: images/recipes/mutti-shakshuka.jpg (182.8 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה שכולם אוהבים (Sarit Atar's Home-Style Shakshuka)
+  Slug: sarit-atar-shakshuka
+  Author: שרית עטר
+  Source: https://saritatar.net/post/shakshuka
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 11
+  Steps: 6
+  Image: images/recipes/sarit-atar-shakshuka.jpg (2617.2 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: מתכון לשקשוקה טעימה (10 Dakot Classic Shakshuka)
+  Slug: 10dakot-shakshuka
+  Author: אפרת סיאצ'י
+  Source: https://www.10dakot.co.il/recipe/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F-%D7%9C%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 11
+  Steps: 3
+  Image: images/recipes/10dakot-shakshuka.jpg (235.5 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה לילדים (Kids' Shakshuka)
+  Slug: 10dakot-kids-shakshuka
+  Author: אפרת סיאצ'י
+  Source: https://www.10dakot.co.il/recipe/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 9
+  Steps: 5
+  Image: images/recipes/10dakot-kids-shakshuka.jpg (45.8 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה מקושקשת (Bishulim Scrambled Shakshuka)
+  Slug: bishulim-shakshuka
+  Author: נטלי שמעוני
+  Source: https://www.bishulim.co.il/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 7
+  Steps: 5
+  Image: images/recipes/bishulim-shakshuka.jpg (9.2 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה מסורתית (Downshiftology Traditional Shakshuka)
+  Slug: downshiftology-shakshuka
+  Author: Lisa Bryan
+  Source: https://downshiftology.com/recipes/shakshuka/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 12
+  Steps: 5
+  Image: images/recipes/downshiftology-shakshuka.jpg (349.8 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה מיטבית (Love and Lemons Best Shakshuka)
+  Slug: love-and-lemons-shakshuka
+  Author: Jeanine Donofrio
+  Source: https://www.loveandlemons.com/shakshuka-recipe/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 14
+  Steps: 5
+  Image: images/recipes/love-and-lemons-shakshuka.jpg (169.5 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה ים-תיכונית (The Mediterranean Dish Shakshuka)
+  Slug: mediterranean-dish-shakshuka
+  Author: Suzy Karadsheh
+  Source: https://www.themediterraneandish.com/shakshuka/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 14
+  Steps: 5
+  Image: images/recipes/mediterranean-dish-shakshuka.jpg (170.7 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה של טורי אייבי (Tori Avey's Shakshuka)
+  Slug: tori-avey-shakshuka
+  Author: Tori Avey
+  Source: https://toriavey.com/shakshuka/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 14
+  Steps: 5
+  Image: images/recipes/tori-avey-shakshuka.jpg (64.3 KB)
+  HTML Page: EXISTS
+  Status: PASS
+
+Recipe: שקשוקה — ביצים ברוטב עגבניות (RecipeTin Eats Shakshuka)
+  Slug: recipetineats-shakshuka
+  Author: Nagi Maehashi
+  Source: https://www.recipetineats.com/shakshuka/
+  Verified: True
+  Category: classic-red (קלאסית אדומה)
+  Ingredients: 16
+  Steps: 8
+  Image: images/recipes/recipetineats-shakshuka.jpg (118.5 KB)
+  HTML Page: EXISTS
+  Status: PASS

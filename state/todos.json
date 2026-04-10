@@ -2,46 +2,41 @@
   {
     "id": 1,
     "status": "completed",
-    "title": "Read state files & assess status"
+    "title": "Read current state files"
   },
   {
     "id": 2,
-    "status": "completed",
-    "title": "Fix any broken recipe pages"
+    "status": "in-progress",
+    "title": "Run validation script"
   },
   {
     "id": 3,
-    "status": "completed",
-    "title": "Add source URLs to recipes.json"
+    "status": "not-started",
+    "title": "Verify recipe pages render correctly"
   },
   {
     "id": 4,
-    "status": "completed",
-    "title": "Fix index.html footer & misc issues"
+    "status": "not-started",
+    "title": "Verify index.html integration"
   },
   {
     "id": 5,
-    "status": "in-progress",
-    "title": "Add source links to recipe pages"
+    "status": "not-started",
+    "title": "Fix any issues found"
   },
   {
     "id": 6,
     "status": "not-started",
-    "title": "Accessibility & final content review"
+    "title": "Re-run validation — 0 failures"
   },
   {
     "id": 7,
     "status": "not-started",
-    "title": "Update knowledge.md & self-observe"
+    "title": "Update knowledge.md + self-observation"
   },
   {
     "id": 8,
     "status": "not-started",
-    "title": "Create/update dashboard.html"
-  },
-  {
-    "id": 9,
-    "status": "not-started",
-    "title": "Compose summary email via Outlook"
+    "title": "Update dashboard"
   }
 ]

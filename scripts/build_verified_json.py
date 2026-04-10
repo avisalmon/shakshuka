@@ -1,0 +1,483 @@
+#!/usr/bin/env python3
+"""Build verified recipes.json from curated recipe data."""
+
+import json
+import os
+
+RECIPES = [
+    {
+        "id": 1,
+        "slug": "mutti-shakshuka",
+        "titleHe": "שקשוקה של Mutti",
+        "titleEn": "Mutti's Shakshuka",
+        "author": "Mutti Israel",
+        "sourceUrl": "https://mutti.co.il/recipe/shakshuka/",
+        "sourceVerified": True,
+        "image": "images/recipes/mutti-shakshuka.jpg",
+        "imageSource": "Mutti Israel",
+        "imageUrl": "http://mutti.co.il/wp-content/uploads/2019/07/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-%D7%92%D7%91%D7%99%D7%A0%D7%95%D7%AA.jpg",
+        "category": "cheese",
+        "categoryHe": "עם גבינות",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "20 דקות",
+        "servings": "4-5",
+        "description": "שקשוקה ישראלית קלאסית עם עגבניות Mutti Polpa, תיבול נפרד וגבינות להגשה.",
+        "ingredients": [
+            {"item": "שמן זית", "amount": "2", "unit": "כפות"},
+            {"item": "בצל גדול קצוץ דק", "amount": "1", "unit": "יחידה"},
+            {"item": "שיני שום קצוצות", "amount": "2", "unit": "יחידות"},
+            {"item": "פלפל אדום חתוך", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפל ירוק חריף פרוס דק (לא חובה)", "amount": "½", "unit": "יחידה"},
+            {"item": "עגבניות שרי טריות (לא חובה)", "amount": "1", "unit": "כוס"},
+            {"item": "עגבניות מרוסקות Mutti Polpa", "amount": "1", "unit": "פחית (400 גרם)"},
+            {"item": "רסק עגבניות Mutti", "amount": "1", "unit": "כף"},
+            {"item": "מים", "amount": "⅓", "unit": "כוס"},
+            {"item": "ביצים", "amount": "4-5", "unit": "יחידות"},
+            {"item": "שמן זית (לתיבול)", "amount": "2", "unit": "כפות"},
+            {"item": "פפריקה מתוקה", "amount": "1", "unit": "כפית"},
+            {"item": "כמון", "amount": "½", "unit": "כפית"},
+            {"item": "שן שום כתושה (לתיבול)", "amount": "1", "unit": "יחידה"},
+            {"item": "מלח", "amount": "1", "unit": "כפית"},
+            {"item": "פלפל שחור", "amount": "½", "unit": "כפית"},
+            {"item": "פטה מפוררת או כדורי מוצרלה קטנים (להגשה)", "amount": "חופן", "unit": ""}
+        ],
+        "steps": [
+            "בקערה קטנה מערבבים את חומרי התיבול ומניחים בצד.",
+            "מחממים שמן במחבת גדולה, מוסיפים בצל ופלפל חריף, מטגנים קלות, מוסיפים שום ופלפל אדום ומטגנים 5-7 דקות.",
+            "חוצים עגבניות שרי, מוסיפים למחבת, יוצקים עגבניות מרוסקות ורכז ומבשלים 10 דקות.",
+            "מוסיפים תערובת תבלינים, מערבבים, שוברים ביצים ומבשלים 10 דקות.",
+            "מתבלים חלמון במלח ופלפל, מפזרים פטרוזיליה, ניתן לפזר גבינה.",
+            "מגישים עם לחם טרי."
+        ],
+        "proTips": [
+            "ניתן להוסיף תוספות כמו גבינות, תרד או נקנקיות.",
+            "מומלץ לא לכסות כדי שהחלמון ישאר נוזלי."
+        ],
+        "tags": ["גבינות", "Mutti", "קלאסית", "ישראלית"]
+    },
+    {
+        "id": 2,
+        "slug": "sarit-atar-shakshuka",
+        "titleHe": "שקשוקה שכולם אוהבים",
+        "titleEn": "Sarit Atar's Home-Style Shakshuka",
+        "author": "שרית עטר",
+        "sourceUrl": "https://saritatar.net/post/shakshuka",
+        "sourceVerified": True,
+        "image": "images/recipes/sarit-atar-shakshuka.jpg",
+        "imageSource": "שרית עטר",
+        "imageUrl": "https://static.wixstatic.com/media/524338_6f39cee3a76e48868ce6e1e84f0481f0~mv2.jpeg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "20 דקות",
+        "servings": "4",
+        "description": "שקשוקה ביתית בסיסית עם עגבניות טריות ובשלות, המתכון שכולם הכי אוהבים.",
+        "ingredients": [
+            {"item": "בצל בינוני קצוץ דק", "amount": "1", "unit": "יחידה"},
+            {"item": "שמן זית", "amount": "5", "unit": "כפות"},
+            {"item": "עגבניות גדולות בשלות ורכות", "amount": "6", "unit": "יחידות"},
+            {"item": "פלפל אדום או ירוק חתוך לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "שני שום קצוצות", "amount": "4", "unit": "יחידות"},
+            {"item": "פפריקה מתוקה או חריפה", "amount": "1", "unit": "כף"},
+            {"item": "מלח", "amount": "1", "unit": "כפית"},
+            {"item": "רסק עגבניות", "amount": "2", "unit": "כפות גדושות"},
+            {"item": "מים", "amount": "½", "unit": "כוס"},
+            {"item": "ביצים טריות", "amount": "6", "unit": "יחידות"},
+            {"item": "פטרוזיליה טריה קצוצה", "amount": "חופן", "unit": ""}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת רחבה ומטגנים את הבצל עד שהוא שקוף.",
+            "מוסיפים את העגבניות החתוכות, הפלפל והשום, ומבשלים יחד.",
+            "מוסיפים פפריקה, מלח, רסק עגבניות ומים, ומבשלים כ-10 דקות עד שהרוטב מתעבה.",
+            "טועמים ומתקנים תיבול, יוצרים גומות ושוברים ביצים לתוכן.",
+            "מכסים ומבשלים עד שהביצים מוכנות לפי הטעם.",
+            "מסירים מכסה, מפזרים פטרוזיליה ומגישים חם עם לחם טוב."
+        ],
+        "proTips": [
+            "אין צורך לקלף את העגבניות.",
+            "מגישים עם לחם טוב, טחינה וסלט ישראלי."
+        ],
+        "tags": ["קלאסית", "ביתית", "אדומה", "ישראלית"]
+    },
+    {
+        "id": 3,
+        "slug": "10dakot-shakshuka",
+        "titleHe": "מתכון לשקשוקה טעימה",
+        "titleEn": "10 Dakot Classic Shakshuka",
+        "author": "אפרת סיאצ'י",
+        "sourceUrl": "https://www.10dakot.co.il/recipe/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F-%D7%9C%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94/",
+        "sourceVerified": True,
+        "image": "images/recipes/10dakot-shakshuka.jpg",
+        "imageSource": "10 דקות",
+        "imageUrl": "https://www.10dakot.co.il/wp-content/uploads/2025/02/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "20 דקות",
+        "servings": "2-3",
+        "description": "שקשוקה קלאסית וטעימה שמוכנה ב-10 דקות, מתכון פשוט ומהיר.",
+        "ingredients": [
+            {"item": "בצל גדול קצוץ", "amount": "1", "unit": "יחידה"},
+            {"item": "עגבניות בינוניות חתוכות לקוביות", "amount": "4", "unit": "יחידות"},
+            {"item": "גמבה חתוכה לקוביות", "amount": "½", "unit": "יחידה"},
+            {"item": "שיני שום כתושות", "amount": "3-4", "unit": "יחידות"},
+            {"item": "רסק עגבניות", "amount": "1", "unit": "כף"},
+            {"item": "ביצים", "amount": "4", "unit": "יחידות"},
+            {"item": "שמן", "amount": "1-2", "unit": "כפות"},
+            {"item": "פפריקה מתוקה גדושה", "amount": "1", "unit": "כפית"},
+            {"item": "מלח", "amount": "", "unit": "לפי הטעם"},
+            {"item": "פלפל שחור", "amount": "", "unit": "לפי הטעם"},
+            {"item": "פלפל חריף (לא חובה)", "amount": "", "unit": "לפי הטעם"}
+        ],
+        "steps": [
+            "מחממים שמן במחבת, מוסיפים בצל קצוץ ומטגנים עד להזהבה. מוסיפים גמבה, עגבניות ושום ומטגנים יחד.",
+            "מוסיפים רסק עגבניות, פפריקה, מלח, פלפל שחור ופלפל חריף לפי הטעם, ומערבבים היטב.",
+            "יוצרים גומות ברוטב, שוברים ביצים לתוכן, מכסים ומבשלים עד שהביצים מוכנות."
+        ],
+        "proTips": [
+            "ניתן להוסיף פלפל חריף לפי הטעם.",
+            "מגישים עם לחם טרי."
+        ],
+        "tags": ["קלאסית", "מהירה", "ישראלית", "אדומה"]
+    },
+    {
+        "id": 4,
+        "slug": "10dakot-kids-shakshuka",
+        "titleHe": "שקשוקה לילדים",
+        "titleEn": "Kids' Shakshuka",
+        "author": "אפרת סיאצ'י",
+        "sourceUrl": "https://www.10dakot.co.il/recipe/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D/",
+        "sourceVerified": True,
+        "image": "images/recipes/10dakot-kids-shakshuka.jpg",
+        "imageSource": "10 דקות",
+        "imageUrl": "https://www.10dakot.co.il/wp-content/uploads/2014/09/DSC_0055-%D7%A2%D7%95%D7%AA%D7%A7.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "21 דקות",
+        "servings": "2-3",
+        "description": "שקשוקה עדינה וטעימה במיוחד לילדים, עם ירקות מגורדים לרוטב חלק.",
+        "ingredients": [
+            {"item": "בצל קטן מגורד", "amount": "½", "unit": "יחידה"},
+            {"item": "שן שום כתושה", "amount": "1", "unit": "יחידה"},
+            {"item": "עגבניה גדולה מגורדת", "amount": "1", "unit": "יחידה"},
+            {"item": "רסק עגבניות", "amount": "1", "unit": "כף"},
+            {"item": "ביצים", "amount": "2-3", "unit": "יחידות"},
+            {"item": "שמן זית", "amount": "2", "unit": "כפות"},
+            {"item": "סוכר", "amount": "½", "unit": "כפית"},
+            {"item": "מלח", "amount": "½", "unit": "כפית"},
+            {"item": "פפריקה מתוקה", "amount": "½", "unit": "כפית"}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת ומטגנים בצל מגורד כ-2 דקות.",
+            "מוסיפים שום כתוש ומטגנים דקה נוספת.",
+            "מוסיפים עגבניה מגורדת, מכסים ומבשלים 5 דקות.",
+            "מוסיפים רסק עגבניות, סוכר ופפריקה מתוקה ומבשלים 5 דקות נוספות.",
+            "שוברים ביצים לתוך הרוטב, מכסים ומבשלים כ-8 דקות עד שהביצים מוכנות."
+        ],
+        "proTips": [
+            "גירוד הבצל והעגבניה יוצר רוטב חלק שילדים אוהבים.",
+            "הסוכר מרכך את החומציות של העגבניות."
+        ],
+        "tags": ["ילדים", "עדינה", "קלה", "ישראלית"]
+    },
+    {
+        "id": 5,
+        "slug": "bishulim-shakshuka",
+        "titleHe": "שקשוקה מקושקשת",
+        "titleEn": "Bishulim Scrambled Shakshuka",
+        "author": "נטלי שמעוני",
+        "sourceUrl": "https://www.bishulim.co.il/%D7%9E%D7%AA%D7%9B%D7%95%D7%9F/%D7%A9%D7%A7%D7%A9%D7%95%D7%A7%D7%94",
+        "sourceVerified": True,
+        "image": "images/recipes/bishulim-shakshuka.jpg",
+        "imageSource": "בישולים",
+        "imageUrl": "https://www.bishulim.co.il/sites/default/files/styles/image_tablet_portrait_708_600/public/srh_recipes/0ed6a9a285f5f7ff1e9aa659fb69a948.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "5 דקות",
+        "cookTime": "20 דקות",
+        "servings": "2",
+        "description": "שקשוקה מקושקשת מהירה עם עגבניות מגורדות וביצים מקושקשות ברוטב.",
+        "ingredients": [
+            {"item": "שיני שום", "amount": "2", "unit": "יחידות"},
+            {"item": "עגבניות בינוניות מגורדות", "amount": "3", "unit": "יחידות"},
+            {"item": "ביצים", "amount": "2", "unit": "יחידות"},
+            {"item": "מלח", "amount": "", "unit": "לפי הטעם"},
+            {"item": "פלפל שחור", "amount": "", "unit": "לפי הטעם"},
+            {"item": "פלפל אדום חריף (אופציונלי)", "amount": "", "unit": "לפי הטעם"},
+            {"item": "פפריקה אדומה מתוקה", "amount": "1", "unit": "כף"}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת על אש בינונית.",
+            "כותשים שיני שום ומטגנים אותם בשמן עד להזהבה קלה.",
+            "מוסיפים עגבניות מגורדות ומבשלים עד שהרוטב מצטמצם.",
+            "מוסיפים פפריקה מתוקה, מלח, פלפל שחור ופלפל חריף לפי הטעם.",
+            "שוברים ביצים לתוך הרוטב ומקשקשים עד שהביצים מתבשלות."
+        ],
+        "proTips": [
+            "העגבניות המגורדות יוצרות רוטב חלק במיוחד.",
+            "ניתן להוסיף פלפל חריף לפי הטעם."
+        ],
+        "tags": ["מקושקשת", "מהירה", "קלה", "ישראלית"]
+    },
+    {
+        "id": 6,
+        "slug": "downshiftology-shakshuka",
+        "titleHe": "שקשוקה מסורתית",
+        "titleEn": "Downshiftology Traditional Shakshuka",
+        "author": "Lisa Bryan",
+        "sourceUrl": "https://downshiftology.com/recipes/shakshuka/",
+        "sourceVerified": True,
+        "image": "images/recipes/downshiftology-shakshuka.jpg",
+        "imageSource": "Downshiftology",
+        "imageUrl": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2023/12/Shakshuka-3-2-1024x1536.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "20 דקות",
+        "servings": "6",
+        "description": "שקשוקה מסורתית צפון-אפריקאית עם עגבניות שלמות קלופות, תבלינים חמים וביצים.",
+        "ingredients": [
+            {"item": "שמן זית", "amount": "2", "unit": "כפות"},
+            {"item": "בצל בינוני חתוך לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפל אדום חתוך לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "שיני שום קצוצות", "amount": "4", "unit": "יחידות"},
+            {"item": "פפריקה", "amount": "2", "unit": "כפיות"},
+            {"item": "כמון", "amount": "1", "unit": "כפית"},
+            {"item": "אבקת צ'ילי", "amount": "¼", "unit": "כפית"},
+            {"item": "עגבניות שלמות קלופות (פחית 800 גרם)", "amount": "1", "unit": "פחית"},
+            {"item": "ביצים גדולות", "amount": "6", "unit": "יחידות"},
+            {"item": "מלח ופלפל", "amount": "", "unit": "לפי הטעם"},
+            {"item": "כוסברה טריה", "amount": "1", "unit": "צרור קטן"},
+            {"item": "פטרוזיליה טריה", "amount": "1", "unit": "צרור קטן"}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת, מוסיפים פלפל ובצל ומטגנים כ-5 דקות עד שמתרככים.",
+            "מוסיפים שום, פפריקה, כמון ואבקת צ'ילי ומטגנים דקה נוספת.",
+            "יוצקים עגבניות שלמות, מרסקים אותן, מתבלים במלח ופלפל ומבשלים על אש נמוכה עד שהרוטב מתעבה.",
+            "יוצרים גומות ברוטב, שוברים ביצים לתוכן ומבשלים 5-8 דקות עד שהביצים מוכנות.",
+            "מפזרים כוסברה ופטרוזיליה טריה ומגישים."
+        ],
+        "proTips": [
+            "רסקו את העגבניות עם כף עץ ישירות במחבת.",
+            "כסו את המחבת לביצים מוצקות יותר, השאירו פתוח לחלמון נוזלי."
+        ],
+        "tags": ["מסורתית", "בריאה", "צפון-אפריקאית", "קלה"]
+    },
+    {
+        "id": 7,
+        "slug": "love-and-lemons-shakshuka",
+        "titleHe": "שקשוקה מיטבית",
+        "titleEn": "Love and Lemons Best Shakshuka",
+        "author": "Jeanine Donofrio",
+        "sourceUrl": "https://www.loveandlemons.com/shakshuka-recipe/",
+        "sourceVerified": True,
+        "image": "images/recipes/love-and-lemons-shakshuka.jpg",
+        "imageSource": "Love and Lemons",
+        "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2026/01/shakshuka-recipe-1160x1578.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "25 דקות",
+        "servings": "4",
+        "description": "שקשוקה מיטבית עם עגבניות צלויות באש, פטה ועשבי תיבול טריים.",
+        "ingredients": [
+            {"item": "שמן זית כתית מעולה", "amount": "2", "unit": "כפות"},
+            {"item": "בצל לבן קטן חתוך לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפל אדום חתוך לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "שיני שום קצוצות", "amount": "3", "unit": "יחידות"},
+            {"item": "כמון", "amount": "1", "unit": "כפית"},
+            {"item": "פפריקה", "amount": "½", "unit": "כפית"},
+            {"item": "קאיין (אופציונלי)", "amount": "קורט", "unit": ""},
+            {"item": "עגבניות מרוסקות צלויות באש (פחית 800 גרם)", "amount": "1", "unit": "פחית"},
+            {"item": "מלח ים", "amount": "½", "unit": "כפית"},
+            {"item": "פלפל שחור טחון טרי", "amount": "", "unit": "לפי הטעם"},
+            {"item": "ביצים גדולות", "amount": "6", "unit": "יחידות"},
+            {"item": "פטרוזיליה או כוסברה טריה", "amount": "¼", "unit": "כוס"},
+            {"item": "פטה מפוררת", "amount": "¼", "unit": "כוס"},
+            {"item": "פיתה להגשה", "amount": "", "unit": ""}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת, מוסיפים בצל ופלפל ומטגנים 5-8 דקות עד שמתרככים.",
+            "מוסיפים שום, כמון, פפריקה וקאיין ומטגנים 30 שניות.",
+            "מוסיפים עגבניות מרוסקות ומבשלים על אש נמוכה כ-15 דקות עד שהרוטב מתעבה.",
+            "יוצרים 6 גומות ברוטב, שוברים ביצים לתוכן, מכסים ומבשלים 4-8 דקות עד שהביצים מוכנות.",
+            "מתבלים במלח ופלפל, מפזרים פטרוזיליה ופטה ומגישים עם פיתה."
+        ],
+        "proTips": [
+            "עגבניות צלויות באש נותנות עומק טעם מעושן.",
+            "מכסים לחלבון מוצק, משאירים פתוח לחלמון נוזלי."
+        ],
+        "tags": ["מיטבית", "קלאסית", "צפון-אפריקאית", "צמחונית"]
+    },
+    {
+        "id": 8,
+        "slug": "mediterranean-dish-shakshuka",
+        "titleHe": "שקשוקה ים-תיכונית",
+        "titleEn": "The Mediterranean Dish Shakshuka",
+        "author": "Suzy Karadsheh",
+        "sourceUrl": "https://www.themediterraneandish.com/shakshuka/",
+        "sourceVerified": True,
+        "image": "images/recipes/mediterranean-dish-shakshuka.jpg",
+        "imageSource": "The Mediterranean Dish",
+        "imageUrl": "https://www.themediterraneandish.com/wp-content/uploads/2017/01/Shakshuka-Recipe-The-Mediterranean-Dish-100.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "30 דקות",
+        "servings": "6",
+        "description": "שקשוקה ים-תיכונית עם עגבניות טריות, כוסברה, נענע ופטרוזיליה.",
+        "ingredients": [
+            {"item": "שמן זית כתית מעולה", "amount": "3", "unit": "כפות"},
+            {"item": "בצל צהוב גדול קצוץ", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפלים ירוקים קצוצים", "amount": "2", "unit": "יחידות"},
+            {"item": "שיני שום קצוצות", "amount": "2", "unit": "יחידות"},
+            {"item": "כוסברה טחונה", "amount": "1", "unit": "כפית"},
+            {"item": "פפריקה מתוקה", "amount": "1", "unit": "כפית"},
+            {"item": "כמון טחון", "amount": "½", "unit": "כפית"},
+            {"item": "פתיתי פלפל אדום (אופציונלי)", "amount": "קורט", "unit": ""},
+            {"item": "מלח ופלפל", "amount": "", "unit": "לפי הטעם"},
+            {"item": "עגבניות בינוניות קצוצות", "amount": "6", "unit": "יחידות"},
+            {"item": "רוטב עגבניות", "amount": "½", "unit": "כוס"},
+            {"item": "ביצים גדולות", "amount": "6", "unit": "יחידות"},
+            {"item": "פטרוזיליה טריה קצוצה", "amount": "¼", "unit": "כוס"},
+            {"item": "נענע טריה קצוצה", "amount": "¼", "unit": "כוס"}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת, מוסיפים בצל, פלפלים ירוקים, שום ותבלינים ומטגנים כ-5 דקות.",
+            "מוסיפים עגבניות קצוצות ורוטב עגבניות, מכסים ומבשלים כ-15 דקות ואז מורידים מכסה לצמצום.",
+            "יוצרים 6 גומות ברוטב ושוברים ביצים לתוכן.",
+            "מכסים ומבשלים על אש נמוכה עד שהביצים מוכנות לפי הטעם.",
+            "מפזרים פטרוזיליה ונענע טריה ומגישים מיד."
+        ],
+        "proTips": [
+            "עגבניות טריות ובשלות עושות את ההבדל במתכון הזה.",
+            "הנענע הטריה מוסיפה רעננות ים-תיכונית ייחודית."
+        ],
+        "tags": ["ים-תיכונית", "צפון-אפריקאית", "עגבניות טריות", "עשבי תיבול"]
+    },
+    {
+        "id": 9,
+        "slug": "tori-avey-shakshuka",
+        "titleHe": "שקשוקה של טורי אייבי",
+        "titleEn": "Tori Avey's Shakshuka",
+        "author": "Tori Avey",
+        "sourceUrl": "https://toriavey.com/shakshuka/",
+        "sourceVerified": True,
+        "image": "images/recipes/tori-avey-shakshuka.jpg",
+        "imageSource": "Tori Avey",
+        "imageUrl": "https://toriavey.com/images/2010/07/Shakshuka-IMAGES-6-1.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "30 דקות",
+        "servings": "6",
+        "description": "שקשוקה קלאסית מזרח-תיכונית עם עגבניות טריות או משומרות, תבלינים חמים וביצים.",
+        "ingredients": [
+            {"item": "שמן זית", "amount": "1", "unit": "כף"},
+            {"item": "בצל חתוך לקוביות", "amount": "½", "unit": "יחידה"},
+            {"item": "שן שום קצוצה", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפל אדום קצוץ", "amount": "1", "unit": "יחידה"},
+            {"item": "עגבניות בשלות חתוכות לקוביות (או 2 פחיות 400 גרם)", "amount": "4", "unit": "כוסות"},
+            {"item": "רסק עגבניות", "amount": "2", "unit": "כפות"},
+            {"item": "אבקת צ'ילי עדינה", "amount": "1", "unit": "כפית"},
+            {"item": "כמון טחון", "amount": "1", "unit": "כפית"},
+            {"item": "פפריקה", "amount": "1", "unit": "כפית"},
+            {"item": "קאיין", "amount": "קורט", "unit": ""},
+            {"item": "סוכר (אופציונלי)", "amount": "קורט", "unit": ""},
+            {"item": "מלח כשר ופלפל", "amount": "", "unit": "לפי הטעם"},
+            {"item": "ביצים גדולות", "amount": "6", "unit": "יחידות"},
+            {"item": "פטרוזיליה או כוסברה טריה (אופציונלי)", "amount": "½", "unit": "כף"}
+        ],
+        "steps": [
+            "מחממים שמן זית במחבת ומטגנים בצל ושום עד שמתרככים.",
+            "מוסיפים פלפל אדום ומטגנים 5-7 דקות נוספות.",
+            "מוסיפים עגבניות, רסק עגבניות, צ'ילי, כמון, פפריקה, קאיין וסוכר, ומבשלים 5-7 דקות עד שהרוטב מתעבה.",
+            "שוברים 6 ביצים על הרוטב במרווחים שווים.",
+            "מכסים ומבשלים 10-15 דקות עד שהביצים מוכנות, מפזרים עשבי תיבול ומגישים."
+        ],
+        "proTips": [
+            "אפשר להשתמש בעגבניות טריות או משומרות — שניהם עובדים מצוין.",
+            "קורט סוכר מפחית חומציות אם העגבניות חמוצות מדי."
+        ],
+        "tags": ["מזרח-תיכונית", "צמחונית", "ללא גלוטן", "קלאסית"]
+    },
+    {
+        "id": 10,
+        "slug": "recipetineats-shakshuka",
+        "titleHe": "שקשוקה — ביצים ברוטב עגבניות",
+        "titleEn": "RecipeTin Eats Shakshuka",
+        "author": "Nagi Maehashi",
+        "sourceUrl": "https://www.recipetineats.com/shakshuka/",
+        "sourceVerified": True,
+        "image": "images/recipes/recipetineats-shakshuka.jpg",
+        "imageSource": "RecipeTin Eats",
+        "imageUrl": "https://www.recipetineats.com/tachyon/2014/05/Shakshuka_9.jpg",
+        "category": "classic-red",
+        "categoryHe": "קלאסית אדומה",
+        "difficulty": "קל",
+        "prepTime": "10 דקות",
+        "cookTime": "20 דקות",
+        "servings": "2-3",
+        "description": "שקשוקה קלאסית עם אפשרות לאפייה בתנור או בישול על הכיריים, עם תבלינים חמים ולחם טרי.",
+        "ingredients": [
+            {"item": "שמן זית", "amount": "2", "unit": "כפות"},
+            {"item": "בצל אדום קטן פרוס", "amount": "1", "unit": "יחידה"},
+            {"item": "שן שום קצוצה", "amount": "1", "unit": "יחידה"},
+            {"item": "פלפל אדום קטן פרוס", "amount": "1", "unit": "יחידה"},
+            {"item": "עגבניה חתוכה לקוביות", "amount": "1", "unit": "יחידה"},
+            {"item": "עגבניות מרוסקות (פחית 400 גרם)", "amount": "1", "unit": "פחית"},
+            {"item": "רסק עגבניות", "amount": "1", "unit": "כף"},
+            {"item": "ציר ירקות או מים", "amount": "½", "unit": "כוס"},
+            {"item": "פפריקה", "amount": "1", "unit": "כפית"},
+            {"item": "כמון", "amount": "1", "unit": "כפית"},
+            {"item": "פלפל שחור", "amount": "¼", "unit": "כפית"},
+            {"item": "קאיין", "amount": "¼", "unit": "כפית"},
+            {"item": "מלח", "amount": "½", "unit": "כפית"},
+            {"item": "ביצים (עד 6)", "amount": "4", "unit": "יחידות"},
+            {"item": "פטרוזיליה או כוסברה טריה", "amount": "2", "unit": "כפות"},
+            {"item": "פיתה או לחם להגשה", "amount": "", "unit": ""}
+        ],
+        "steps": [
+            "מחממים תנור ל-180 מעלות צלזיוס.",
+            "מחממים שמן זית במחבת ברזל יצוק, מוסיפים שום ובצל ומטגנים 2 דקות.",
+            "מוסיפים פלפל אדום פרוס ועגבניה חתוכה לקוביות.",
+            "מוסיפים עגבניות מרוסקות, רסק עגבניות, ציר ותבלינים ומערבבים.",
+            "מבשלים 5 דקות עד שהרוטב מתעבה מעט.",
+            "יוצרים גומות ברוטב, שוברים ביצים לתוכן ומבשלים דקה על הכיריים.",
+            "מעבירים לתנור ואופים 7-12 דקות (או מכסים על הכיריים 3 דקות) עד שהביצים מוכנות.",
+            "מפזרים עשבי תיבול טריים ומגישים עם לחם או פיתה."
+        ],
+        "proTips": [
+            "מחבת ברזל יצוק נותנת תוצאה הכי טובה.",
+            "אפשר לבשל הכל על הכיריים אם אין תנור — פשוט מכסים."
+        ],
+        "tags": ["ביצים אפויות", "מזרח-תיכונית", "צפון-אפריקאית", "ברזל יצוק"]
+    }
+]
+
+
+def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    output_path = os.path.join(project_root, "data", "recipes.json")
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(RECIPES, f, ensure_ascii=False, indent=2)
+
+    print(f"Wrote {len(RECIPES)} recipes to {output_path}")
+
+
+if __name__ == "__main__":
+    main()

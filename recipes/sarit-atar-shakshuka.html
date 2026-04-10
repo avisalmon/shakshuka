@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שקשוקה שכולם אוהבים | שקשוקה</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container">
+  <a href="../index.html" class="nav-logo"><span>&#x1F373;</span> שקשוקה</a>
+  <div class="nav-links">
+    <a href="../index.html" class="nav-link">בית</a>
+    <a href="../index.html#recipes" class="nav-link">מתכונים</a>
+    <a href="../history.html" class="nav-link">היסטוריה</a>
+    <a href="../techniques.html" class="nav-link">טכניקות</a>
+    <a href="../debates.html" class="nav-link">ויכוחים</a>
+  </div>
+  <div class="nav-actions">
+    <div class="search-container" style="max-width:200px;">
+      <span class="search-icon">&#x1F50D;</span>
+      <input type="text" class="search-input" placeholder="חיפוש מתכונים..." aria-label="חיפוש מתכונים">
+      <div class="search-results"></div>
+    </div>
+    <a href="../favorites.html" class="nav-favorites" aria-label="מועדפים">&#x2764;&#xFE0F; <span class="favorites-badge" style="display:none">0</span></a>
+    <button class="theme-toggle" aria-label="החלפת ערכת נושא">&#x1F319;</button>
+    <button class="hamburger" aria-label="תפריט"><span></span><span></span><span></span></button>
+  </div>
+</div></nav>
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <a href="../index.html" class="mobile-nav-link">&#x1F3E0; בית</a>
+  <a href="../index.html#recipes" class="mobile-nav-link">&#x1F373; כל המתכונים</a>
+  <a href="../history.html" class="mobile-nav-link">&#x1F4DC; היסטוריה</a>
+  <a href="../techniques.html" class="mobile-nav-link">&#x1F468;&#x200D;&#x1F373; טכניקות</a>
+  <a href="../debates.html" class="mobile-nav-link">&#x2694; ויכוחים</a>
+  <a href="../favorites.html" class="mobile-nav-link">&#x2764;&#xFE0F; מועדפים</a>
+  <a href="../about.html" class="mobile-nav-link">&#x2139;&#xFE0F; אודות</a>
+</div>
+
+<section class="recipe-hero" style="background-image:url('../images/recipes/sarit-atar-shakshuka.jpg');background-size:cover;background-position:center;">
+  <div class="hero-overlay" style="background:linear-gradient(135deg,#C0392Bcc,#E74C3C99);">
+    <div class="hero-content">
+      <span class="recipe-tag" style="background:#E74C3C;color:#fff;font-size:0.9rem;padding:6px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;">קלאסית אדומה</span>
+      <h1>שקשוקה שכולם אוהבים</h1>
+      <p style="opacity:0.9;margin-top:8px;">מאת שרית עטר</p>
+    </div>
+  </div>
+</section>
+
+<main class="recipe-detail"><div class="container">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="../index.html">בית</a> &rsaquo; <a href="../index.html#recipes">מתכונים</a> &rsaquo; <span class="breadcrumb-current">Sarit Atar's Home-Style Shakshuka</span>
+  </nav>
+
+  <div class="recipe-meta-bar">
+    <div class="meta-item"><span class="meta-icon">&#x23F1;&#xFE0F;</span><span class="meta-label">הכנה</span><span class="meta-value" data-field="prep">10 דק׳</span></div>
+    <div class="meta-item"><span class="meta-icon">&#x1F525;</span><span class="meta-label">בישול</span><span class="meta-value" data-field="cook">20 דק׳</span></div>
+    <div class="meta-item"><span class="meta-icon">&#x23F0;</span><span class="meta-label">סה"כ</span><span class="meta-value" data-field="total">30 דק׳</span></div>
+    <div class="meta-item"><span class="meta-icon">&#x1F37D;&#xFE0F;</span><span class="meta-label">מנות</span><span class="meta-value" data-field="servings">4</span></div>
+    <div class="meta-item"><span class="meta-icon">&#x1F7E2;</span><span class="meta-label">רמת קושי</span><span class="meta-value">קל</span></div>
+    <div class="meta-item"><button class="meta-print-btn" onclick="window.print()" aria-label="הדפסת מתכון" title="הדפסה">&#x1F5A8;&#xFE0F;</button></div>
+    <div class="meta-item"><button class="meta-fav-btn" data-recipe="sarit-atar-shakshuka" aria-label="הוספה למועדפים">&#x1F90D;</button></div>
+  </div>
+
+  <div class="recipe-description"><p>שקשוקה ביתית בסיסית עם עגבניות טריות ובשלות, המתכון שכולם הכי אוהבים.</p></div>
+  <div class="source-attribution" style="margin:16px 0;padding:12px 20px;background:var(--bg-card,#fff);border-right:4px solid var(--accent,#C0392B);border-radius:8px;font-size:0.95rem;"><span style="opacity:0.7;">&#x1F4D6; מקור המתכון:</span> <a href="https://saritatar.net/post/shakshuka" target="_blank" rel="noopener noreferrer" style="color:var(--accent,#C0392B);text-decoration:none;font-weight:600;margin-right:8px;">שרית עטר</a> <span style="opacity:0.5;font-size:0.85em;">&#x2197;</span></div>
+  <div class="recipe-tags"><span class="recipe-tag">קלאסית</span><span class="recipe-tag">ביתית</span><span class="recipe-tag">אדומה</span><span class="recipe-tag">ישראלית</span></div>
+
+  <div class="recipe-content-grid">
+    <div class="ingredients-section">
+      <div class="ingredients-header">
+        <h3>&#x1F9FE; מרכיבים</h3>
+        <button class="btn btn-sm btn-outline" id="add-shopping-list">&#x1F6D2; הוסף לרשימת קניות</button>
+        <button class="btn btn-sm btn-outline" id="double-qty-btn" style="margin-right:8px;">&#xD7;2 הכפלת כמויות</button>
+      </div>
+      <ul class="ingredients-list">
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="בצל בינוני קצוץ דק" data-amount="1" data-unit="יחידה"> <span class="ingredient-text" dir="rtl">1 יחידה בצל בינוני קצוץ דק</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="שמן זית" data-amount="5" data-unit="כפות"> <span class="ingredient-text" dir="rtl">5 כפות שמן זית</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="עגבניות גדולות בשלות ורכות" data-amount="6" data-unit="יחידות"> <span class="ingredient-text" dir="rtl">6 יחידות עגבניות גדולות בשלות ורכות</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="פלפל אדום או ירוק חתוך לקוביות" data-amount="1" data-unit="יחידה"> <span class="ingredient-text" dir="rtl">1 יחידה פלפל אדום או ירוק חתוך לקוביות</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="שני שום קצוצות" data-amount="4" data-unit="יחידות"> <span class="ingredient-text" dir="rtl">4 יחידות שני שום קצוצות</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="פפריקה מתוקה או חריפה" data-amount="1" data-unit="כף"> <span class="ingredient-text" dir="rtl">1 כף פפריקה מתוקה או חריפה</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="מלח" data-amount="1" data-unit="כפית"> <span class="ingredient-text" dir="rtl">1 כפית מלח</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="רסק עגבניות" data-amount="2" data-unit="כפות גדושות"> <span class="ingredient-text" dir="rtl">2 כפות גדושות רסק עגבניות</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="מים" data-amount="½" data-unit="כוס"> <span class="ingredient-text" dir="rtl">½ כוס מים</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="ביצים טריות" data-amount="6" data-unit="יחידות"> <span class="ingredient-text" dir="rtl">6 יחידות ביצים טריות</span></label></li>
+<li class="ingredient-item"><label><input type="checkbox" class="ingredient-checkbox" data-ingredient="פטרוזיליה טריה קצוצה" data-amount="חופן" data-unit=""> <span class="ingredient-text" dir="rtl">חופן פטרוזיליה טריה קצוצה</span></label></li>
+      </ul>
+    </div>
+    <div class="steps-section">
+      <h3>&#x1F468;&#x200D;&#x1F373; הוראות הכנה</h3>
+      <ol class="steps-list">
+<li class="step-item"><span class="step-number">1</span><div class="step-content"><p dir="rtl">מחממים שמן זית במחבת רחבה ומטגנים את הבצל עד שהוא שקוף.</p></div></li>
+<li class="step-item"><span class="step-number">2</span><div class="step-content"><p dir="rtl">מוסיפים את העגבניות החתוכות, הפלפל והשום, ומבשלים יחד.</p></div></li>
+<li class="step-item"><span class="step-number">3</span><div class="step-content"><p dir="rtl">מוסיפים פפריקה, מלח, רסק עגבניות ומים, ומבשלים כ-10 דקות עד שהרוטב מתעבה.</p></div></li>
+<li class="step-item"><span class="step-number">4</span><div class="step-content"><p dir="rtl">טועמים ומתקנים תיבול, יוצרים גומות ושוברים ביצים לתוכן.</p></div></li>
+<li class="step-item"><span class="step-number">5</span><div class="step-content"><p dir="rtl">מכסים ומבשלים עד שהביצים מוכנות לפי הטעם.</p></div></li>
+<li class="step-item"><span class="step-number">6</span><div class="step-content"><p dir="rtl">מסירים מכסה, מפזרים פטרוזיליה ומגישים חם עם לחם טוב.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="pro-tips"><h3>&#x1F4A1; טיפים מקצועיים</h3><ul><li dir=rtl>אין צורך לקלף את העגבניות.</li><li dir=rtl>מגישים עם לחם טוב, טחינה וסלט ישראלי.</li></ul></div>
+
+  <div class="user-notes" data-recipe="sarit-atar-shakshuka">
+    <h3>&#x1F4DD; ההערות שלי</h3>
+    <textarea class="user-notes-input" placeholder="כתבו הערות על המתכון הזה..." rows="4"></textarea>
+    <button class="btn btn-sm" id="save-notes">שמירה</button>
+    <span class="saved-message" style="display:none;color:#27ae60;margin-right:8px;">&#x2713; נשמר!</span>
+  </div>
+</div></main>
+
+<section class="related-section"><div class="container"><h3>&#x1F373; אולי תאהבו גם</h3><div class="related-grid"><a href="10dakot-shakshuka.html" class="recipe-card related-card" data-recipe="10dakot-shakshuka" style="text-decoration:none;color:inherit;"><div class="card-image"><img src="../images/recipes/10dakot-shakshuka.jpg" alt="מתכון לשקשוקה טעימה" loading="lazy"></div><div class="card-body"><h4 class="card-title" dir="rtl">מתכון לשקשוקה טעימה</h4><div class="card-meta"><span style="color:#E74C3C;">קלאסית אדומה</span><span>30 דק'</span></div></div><button class="card-favorite-btn" data-recipe="10dakot-shakshuka" aria-label="מועדף">&#x1F90D;</button></a>
+<a href="10dakot-kids-shakshuka.html" class="recipe-card related-card" data-recipe="10dakot-kids-shakshuka" style="text-decoration:none;color:inherit;"><div class="card-image"><img src="../images/recipes/10dakot-kids-shakshuka.jpg" alt="שקשוקה לילדים" loading="lazy"></div><div class="card-body"><h4 class="card-title" dir="rtl">שקשוקה לילדים</h4><div class="card-meta"><span style="color:#E74C3C;">קלאסית אדומה</span><span>31 דק'</span></div></div><button class="card-favorite-btn" data-recipe="10dakot-kids-shakshuka" aria-label="מועדף">&#x1F90D;</button></a>
+<a href="bishulim-shakshuka.html" class="recipe-card related-card" data-recipe="bishulim-shakshuka" style="text-decoration:none;color:inherit;"><div class="card-image"><img src="../images/recipes/bishulim-shakshuka.jpg" alt="שקשוקה מקושקשת" loading="lazy"></div><div class="card-body"><h4 class="card-title" dir="rtl">שקשוקה מקושקשת</h4><div class="card-meta"><span style="color:#E74C3C;">קלאסית אדומה</span><span>25 דק'</span></div></div><button class="card-favorite-btn" data-recipe="bishulim-shakshuka" aria-label="מועדף">&#x1F90D;</button></a>
+</div></div></section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div><h4>&#x1F373; שקשוקה</h4><p>אתר השקשוקה של אבי סלמון</p></div>
+    <div><h4>קטגוריות</h4><ul><li><a href="../index.html#classic-red">קלאסית אדומה</a></li><li><a href="../index.html#cheese">עם גבינות</a></li></ul></div>
+    <div><h4>גלו</h4><ul><li><a href="../history.html">היסטוריה</a></li><li><a href="../techniques.html">טכניקות</a></li><li><a href="../debates.html">ויכוחים</a></li><li><a href="../favorites.html">מועדפים</a></li></ul></div>
+    <div><h4>אודות</h4><p>10 מתכוני שקשוקה מאומתים</p><a href="../about.html">עוד</a></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2025 שקשוקה</p></div>
+</div></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof RecentlyViewed!=='undefined'&&RecentlyViewed.add) RecentlyViewed.add('sarit-atar-shakshuka');
+  if (typeof initFavoriteButtons==='function') initFavoriteButtons();
+  if (typeof Favorites!=='undefined'&&Favorites.updateBadge) Favorites.updateBadge();
+  var na=document.querySelector('.user-notes-input'),sb=document.getElementById('save-notes'),sm=document.querySelector('.saved-message');
+  if(na&&sb){var nk='notes_sarit-atar-shakshuka',en=localStorage.getItem(nk);if(en)na.value=en;sb.addEventListener('click',function(){localStorage.setItem(nk,na.value);if(sm){sm.style.display='inline';setTimeout(function(){sm.style.display='none';},2000);}});}
+  var ab=document.getElementById('add-shopping-list');
+  if(ab){ab.addEventListener('click',function(){var items=[];document.querySelectorAll('.ingredient-checkbox').forEach(function(cb){items.push({ingredient:cb.dataset.ingredient,amount:cb.dataset.amount,unit:cb.dataset.unit,recipe:'sarit-atar-shakshuka'});});if(typeof ShoppingList!=='undefined'&&ShoppingList.addAll)ShoppingList.addAll(items);else{var ex=JSON.parse(localStorage.getItem('shoppingList')||'[]');items.forEach(function(i){ex.push(i);});localStorage.setItem('shoppingList',JSON.stringify(ex));}ab.textContent='\u2713 נוסף!';setTimeout(function(){ab.textContent='\u1F6D2 הוסף לרשימת קניות';},2000);});}
+  document.querySelectorAll('.ingredient-checkbox').forEach(function(cb){cb.addEventListener('change',function(){if(this.checked){var item={ingredient:this.dataset.ingredient,amount:this.dataset.amount,unit:this.dataset.unit,recipe:'sarit-atar-shakshuka'};if(typeof ShoppingList!=='undefined'&&ShoppingList.add)ShoppingList.add(item);else{var ex=JSON.parse(localStorage.getItem('shoppingList')||'[]');ex.push(item);localStorage.setItem('shoppingList',JSON.stringify(ex));}}});});
+  var ds=false,x1=["1 יחידה בצל בינוני קצוץ דק", "5 כפות שמן זית", "6 יחידות עגבניות גדולות בשלות ורכות", "1 יחידה פלפל אדום או ירוק חתוך לקוביות", "4 יחידות שני שום קצוצות", "1 כף פפריקה מתוקה או חריפה", "1 כפית מלח", "2 כפות גדושות רסק עגבניות", "½ כוס מים", "6 יחידות ביצים טריות", "חופן פטרוזיליה טריה קצוצה"],x2=["2 יחידה בצל בינוני קצוץ דק", "10 כפות שמן זית", "12 יחידות עגבניות גדולות בשלות ורכות", "2 יחידה פלפל אדום או ירוק חתוך לקוביות", "8 יחידות שני שום קצוצות", "2 כף פפריקה מתוקה או חריפה", "2 כפית מלח", "4 כפות גדושות רסק עגבניות", "½ כוס מים", "12 יחידות ביצים טריות", "חופן פטרוזיליה טריה קצוצה"];
+  var t1={prep:'10 דק׳',cook:'20 דק׳',total:'30 דק׳',servings:'4'};
+  var t2={prep:'13 דק׳',cook:'28 דק׳',total:'41 דק׳',servings:'8'};
+  var db=document.getElementById('double-qty-btn');
+  if(db){db.addEventListener('click',function(){ds=!ds;var tx=ds?x2:x1,tm=ds?t2:t1;db.textContent=ds?'\xD71 כמות רגילה':'\xD72 הכפלת כמויות';db.style.background=ds?'var(--accent,#e74c3c)':'';db.style.color=ds?'#fff':'';document.querySelectorAll('.ingredient-text').forEach(function(el,idx){if(idx<tx.length)el.textContent=tx[idx];});['prep','cook','total','servings'].forEach(function(k){var f=document.querySelector('.meta-value[data-field="'+k+'"]');if(f)f.textContent=tm[k];});});}
+});
+</script>
+</body></html>
